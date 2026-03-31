@@ -180,7 +180,7 @@
         // --- Utility Components ---
         const Magnetic = ({ children }) => {
             const ref = useRef(null);
-            const [position, setPosition] = useState({ x: 0, y: 0 });
+            const[position, setPosition] = useState({ x: 0, y: 0 });
             
             const handleMouse = (e) => {
                 const { clientX, clientY } = e;
@@ -251,14 +251,14 @@
                                 </Magnetic>
                                 NEXTSTEP<span className="text-blue-500">.</span>
                             </a>
-                            <div className="hidden xl:flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10 shadow-inner">
+                            <div className="hidden xl:flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10 shadow-inner w-[135px] justify-center tabular-nums">
                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                                 <span className="text-[8px] font-black uppercase tracking-widest text-neutral-400">Live: {visitors} Visitors</span>
                             </div>
                         </div>
                         
                         <div className="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] items-center">
-                            <div className="text-neutral-500 font-mono text-[9px] mr-4 hidden xl:block border border-white/5 px-3 py-1 rounded-md bg-white/5">
+                            <div className="text-neutral-500 font-mono text-[9px] mr-4 hidden xl:block border border-white/5 px-3 py-1 rounded-md bg-white/5 w-[100px] text-center tabular-nums">
                                 {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })} IST
                             </div>
                             <a href="#about" className="hover:text-blue-500 transition relative group">About Us<span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
@@ -500,7 +500,7 @@
 
         const Stats = () => {
             const stats =[
-                { label: "Revenue Generated", val: 45, prefix: "₹", suffix: "Cr+", icon: "fa-solid fa-arrow-trend-up" },
+                { label: "Projects Delivered", val: 45, prefix: "", suffix: "+", icon: "fa-solid fa-rocket" },
                 { label: "Active Clients", val: 120, prefix: "", suffix: "+", icon: "fa-solid fa-users" },
                 { label: "Project Success", val: 99, prefix: "", suffix: "%", icon: "fa-solid fa-award" },
                 { label: "Global Reach", val: 12, prefix: "", suffix: "+", icon: "fa-solid fa-globe" }
@@ -550,8 +550,8 @@
                                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                                     </div>
-                                    <div className="ml-4 px-32 py-1 bg-[#222] rounded-lg text-[10px] font-bold text-neutral-400 w-full max-w-sm mx-auto text-center border border-white/5">
-                                        <i className="fa-solid fa-lock text-[8px] mr-2"></i> analytics.nextstep.tech
+                                    <div className="ml-4 px-10 py-1 bg-[#222] rounded-lg text-[10px] font-bold text-neutral-400 w-full max-w-sm mx-auto text-center border border-white/5 truncate">
+                                        <i className="fa-solid fa-lock text-[8px] mr-2"></i> secure.dashboard
                                     </div>
                                 </div>
                                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" loading="lazy" className="w-full opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition duration-1000 origin-bottom" alt="Dashboard Tech Preview" />
@@ -737,62 +737,51 @@
 
         const Pricing = () => {
             const plans =[
-               {
-                  name: "Starter",
-                  priceINR: "₹10,000",
-                  priceUSD: "$120",
-                  desc: "Perfect for growing startups looking to build a strong and professional digital presence.",
-                  features: [
-                    "Professional Website Development",
-                    "Fully Responsive and Mobile-Friendly Design",
-                    "Meta Ads Setup (Facebook and Instagram)",
-                    "SEO Setup for Google Visibility",
-                    "Google AdSense Setup Support",
-                    "Free Domain and Hosting (1 Year)",
-                    "SSL Certificate (Secure Website)",
-                    "Business Email Support",
-                    "6 Months Developer Support",
-                    "Priority Team Assistance (Initial Days)"
-                  ],
-                  suitableFor: "Ideal for Schools, Coaching Institutes, Local Shops, Startups, Restaurants, Portfolios, Clinics, Real Estate Businesses, and more."
-               },
-               { 
-                  name: "AI Build", 
-                  priceINR: "₹15,000", 
-                  priceUSD: "$180", 
-                  desc: "Scale your revenue with advanced AI automation and AdSense optimization.", 
-                  features:["AI Integration","1 year Developer support","7 days adsence free","3 months team support", "AdSense Optimization", "Google Ads", "Priority Support"] 
-               },
-               { 
-                  name: "Software Dev", 
-                  priceINR: "₹25,000", 
-                  priceUSD: "$300", 
-                  desc: "Custom software and app architectures designed to streamline complex business operations.", 
-                  features:["Custom Software Dev", "1 Year Tech Support", "API & Cloud Setup", "High Security Database", "Dedicated Team", "Priority Updates", "Full Scalability"] 
-               },
-               { 
-                  name: "E-commerce Starter", 
-                  priceINR: "₹30,000", 
-                  priceUSD: "$360", 
-                  desc: "An efficient solution to launch your online store with essential features and a seamless shopping experience. Ideal for Small Businesses, Local Sellers, Home-Based Brands, Clothing Stores, and Startups.", 
-                  altPrice: "₹18,999 (Without AdSense features)", 
-                  features:[
-                    "Professional E-commerce Website Setup",
-                    "Product Catalog Configuration",
-                    "Responsive & Mobile-Optimized Design",
-                    "Shopping Cart & Order Management System",
-                    "Secure Payment Gateway Integration",
-                    "WhatsApp Integration for Direct Orders",
-                    "Free Domain & Hosting (1 Year)",
-                    "SSL Certificate (Secure Checkout)",
-                    "On-Page SEO Configuration",
-                    "Google AdSense Setup with 1 Month Support",
-                    "1 Year Developer Support",
-                    "Dedicated Team Assistance (1 Month)",
-                    "Business Growth Guidance & Strategy Support"
-                  ], 
-                  popular: true 
-               }
+                {
+                    name: "Starter",
+                    priceINR: "₹10,000",
+                    priceUSD: "$120",
+                    desc: "Perfect for growing startups looking to build a strong and professional digital presence.",
+                    features:[
+                      "Professional Website Development",
+                      "Fully Responsive and Mobile-Friendly Design",
+                      "Meta Ads Setup (Facebook and Instagram)",
+                      "SEO Setup for Google Visibility",
+                      "Google AdSense Setup Support",
+                      "Free Domain and Hosting (1 Year)",
+                      "SSL Certificate (Secure Website)",
+                      "Business Email Support",
+                      "6 Months Developer Support",
+                      "Priority Team Assistance (Initial Days)"
+                    ],
+                    suitableFor: "Ideal for Schools, Coaching Institutes, Local Shops, Startups, Restaurants, Portfolios, Clinics, Real Estate Businesses, and more."
+                },
+                { name: "AI Build", priceINR: "₹15,000", priceUSD: "$180", desc: "Scale your revenue with advanced AI automation and AdSense optimization.", features:["AI Integration","1 year Developer support","7 days adsence free","3 months team support", "AdSense Optimization", "Google Ads", "Priority Support"] },
+                { name: "Software Dev", priceINR: "₹25,000", priceUSD: "$300", desc: "Custom software and app architectures designed to streamline complex business operations.", features:["Custom Software Dev", "1 Year Tech Support", "API & Cloud Setup", "High Security Database", "Dedicated Team", "Priority Updates", "Full Scalability"] },
+                { 
+                    name: "E-Commerce Starter", 
+                    priceINR: "₹30,000", 
+                    priceUSD: "$360", 
+                    desc: "An efficient solution to launch your online store with essential features and a seamless shopping experience.", 
+                    altPrice: "₹18,999 (Without Ads features)", 
+                    features:[
+                        "Professional E-commerce Website Setup",
+                        "Product Catalog Configuration (Initial Setup Included)",
+                        "Responsive & Mobile-Optimized Design",
+                        "Shopping Cart & Order Management System",
+                        "Secure Payment Gateway Integration",
+                        "WhatsApp Integration for Direct Orders",
+                        "Free Domain & Hosting (1 Year)",
+                        "SSL Certificate (Secure Checkout Experience)",
+                        "On-Page SEO Configuration",
+                        "Google AdSense Setup with 1 Month Support",
+                        "1 Year Developer Support",
+                        "Dedicated Team Assistance (1 Month)",
+                        "Business Growth Guidance & Strategy Support"
+                    ],
+                    suitableFor: "Ideal for Small Businesses, Local Sellers, Home-Based Brands, Clothing Stores, and Startups entering the online market.",
+                    popular: true 
+                }
             ];
             return (
                 <section id="pricing" className="py-32 px-6">
@@ -890,7 +879,7 @@
                                 <label className="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-4 group-focus-within:text-blue-500 transition-colors">Service Required</label>
                                 <select name="service" required className="w-full bg-white/5 border border-white/10 p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition font-bold text-white appearance-none cursor-pointer">
                                     <option value="" className="bg-[#0a0a0a] text-neutral-500">Select Capability</option>
-                                    <option value="Mega Plan" className="bg-[#0a0a0a] text-blue-400 font-black">🔥 E-COMMERCE STARTER (₹30k)</option>
+                                    <option value="E-Commerce Starter" className="bg-[#0a0a0a] text-blue-400 font-black">🔥 E-COMMERCE STARTER (₹30k)</option>
                                     {SERVICES.map(s => <option key={s.id} value={s.title} className="bg-[#0a0a0a]">{s.title}</option>)}
                                 </select>
                             </div>
@@ -901,7 +890,7 @@
                                     <option className="bg-[#0a0a0a]">₹7,000 - ₹15,000</option>
                                     <option className="bg-[#0a0a0a]">₹15,000 - ₹25,000</option>
                                     <option className="bg-[#0a0a0a]">₹25,000 - ₹50,000</option>
-                                    <option className="bg-[#0a0a0a]">₹30,000 (E-com Starter Plan)</option>
+                                    <option className="bg-[#0a0a0a]">₹30,000 (E-Commerce Plan)</option>
                                     <option className="bg-[#0a0a0a]">₹1,00,000+</option>
                                 </select>
                             </div>
@@ -1139,7 +1128,7 @@
                             >
                                 <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                                    <p className="text-xs md:text-sm font-bold text-white">Limited Slots Available For Mega Plan!</p>
+                                    <p className="text-xs md:text-sm font-bold text-white">Limited Slots Available For E-Commerce Plan!</p>
                                 </div>
                                 <a href="#inquiry" className="bg-blue-600 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest hover:bg-blue-700 transition shadow-lg">Claim Yours Now</a>
                             </motion.div>
