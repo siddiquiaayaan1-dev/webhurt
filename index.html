@@ -16,11 +16,11 @@
     <meta name="author" content="nextAura">
     <meta name="theme-color" content="#050505">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://nextstep.tech/" />
+    <link rel="canonical" href="https://nextaura.tech/" />
     
     <!-- Open Graph / Facebook / WhatsApp Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nextstep.tech/">
+    <meta property="og:url" content="https://nextaura.tech/">
     <meta property="og:title" content="nextAura | Elite Web, AI & Digital Marketing Agency">
     <meta property="og:description" content="Premium Web & App Development, AI Automation, Google/Meta Ads, and Mega Growth Plans. Start scaling today.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
@@ -36,12 +36,12 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "nextAura",
-      "url": "https://nextstep.tech",
+      "url": "https://nextaura.tech",
       "logo": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=120&q=80",
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
       "description": "Elite Web, AI & Digital Marketing Agency specializing in Custom Software, Google/Meta Ads, and Growth Optimization.",
       "telephone": "+919058327063",
-      "email": "hello@nextstep.tech",
+      "email": "hello@nextaura.tech",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
@@ -326,6 +326,7 @@
                     <AnimatePresence>
                         {mobileMenu && (
                             <motion.div 
+                                key="mobile-menu"
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
@@ -538,6 +539,7 @@
                     <AnimatePresence>
                         {selected && (
                             <motion.div 
+                                key="service-modal"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -1059,7 +1061,7 @@
                                         As a rapidly growing agency, nextAura is built on an Agile foundation. We realize exactly how much hassle standard template websites can be. We engineer clean systems from scratch that allow absolute custom features, robust architecture, and genuine Search Engine clarity. It's about crafting the best tech iteration of your ideas. We are right beside you for execution and continuous progression. Let’s launch it correctly.
                                     </p>
                                     
-                                    <!-- Premium Custom Typography Signature Instead Of Fake Image -->
+                                    <!-- Premium Custom Typography Signature -->
                                     <div className="mt-4 md:mt-8 text-[2.5rem] md:text-[3.5rem] text-white opacity-80 font-normal tracking-wide" style={{ fontFamily: "'Great Vibes', cursive" }}>Aayan Siddiqui</div>
                                 </div>
                             </div>
@@ -1174,7 +1176,6 @@
             // Exit Intent Logic
             useEffect(() => {
                 const handleMouseLeave = (e) => {
-                    // Mobile user intents are tough to gauge with mouseleave, so mostly active on desktop
                     if (e.clientY <= 0 && !sessionStorage.getItem('exitShown')) {
                         setExitIntent(true);
                         sessionStorage.setItem('exitShown', 'true');
@@ -1289,7 +1290,7 @@
                                         </a>
                                     </Magnetic>
                                     <Magnetic>
-                                        <a href="mailto:hello@nextstep.tech" aria-label="Email Us" className="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-110 transition-transform">
+                                        <a href="mailto:hello@nextaura.tech" aria-label="Email Us" className="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-110 transition-transform">
                                             <i className="fa-solid fa-envelope text-white text-lg md:text-xl"></i>
                                         </a>
                                     </Magnetic>
