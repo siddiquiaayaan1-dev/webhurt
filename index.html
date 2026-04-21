@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta name="google-site-verification" content="pSaGGFEmE-cciZD40KXq2AY1OL-MI99u8gd0FuaAGtk" />
     <meta charset="UTF-8">
@@ -11,12 +12,14 @@
     <meta name="description" content="webhurt: Premium Web & App Development, AI Automation, E-Commerce Solutions, Meta Ads & Growth Plans. Transform your startup's digital presence.">
     <meta name="keywords" content="Web Development, App Development, E-Commerce Starter, AI Automation, Digital Marketing Agency, webhurt, Custom Software, Tech Agency India">
     <meta name="author" content="webhurt">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#ffffff">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://webhurt.tech/" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=2">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png?v=2">
-    <link rel="apple-touch-icon" href="favicon.png?v=2">
+    
+    <!-- Favicon Fixed -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
     
     <!-- Open Graph for SEO and Social Media -->
     <meta property="og:type" content="website">
@@ -42,7 +45,6 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: { sans:['"Inter"', 'sans-serif'], syne:['"Space Grotesk"', 'sans-serif'] },
@@ -54,19 +56,19 @@
     </script>
     <style>
         :root { --font-sans: "Inter", sans-serif; --font-syne: "Space Grotesk", sans-serif; --blue: #2563eb; --blue-glow: rgba(37,99,235,0.3); }
-        body { background-color: #050505; color: white; font-family: var(--font-sans); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+        body { background-color: #f8fafc; color: #0f172a; font-family: var(--font-sans); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
 
-        /* ── GLASS CARDS ── */
-        .glass-card { background: rgba(255,255,255,0.02); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.05); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
-        .glass-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(59,130,246,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 30px rgba(59,130,246,0.15); }
-        .glass-card-no-hover { background: rgba(255,255,255,0.02); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        /* ── GLASS CARDS (Light Theme Adjustments) ── */
+        .glass-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(24px); border: 1px solid rgba(0,0,0,0.05); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 30px rgba(0,0,0,0.03); }
+        .glass-card:hover { background: rgba(255,255,255,1); border-color: rgba(59,130,246,0.3); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 30px rgba(59,130,246,0.1); }
+        .glass-card-no-hover { background: rgba(255,255,255,0.8); backdrop-filter: blur(24px); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 30px rgba(0,0,0,0.03); }
 
         /* ── GRADIENT TEXT ── */
         .gradient-text { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6); background-size: 300% auto; animation: shimmer 5s linear infinite; }
         @keyframes shimmer { to { background-position: 300% center; } }
 
         /* ── BUTTONS ── */
-        .btn-premium { position: relative; overflow: hidden; transition: all 0.5s ease; z-index: 10; box-shadow: 0 10px 25px rgba(37,99,235,0.25); }
+        .btn-premium { position: relative; overflow: hidden; transition: all 0.5s ease; z-index: 10; box-shadow: 0 10px 25px rgba(37,99,235,0.25); color: white !important; }
         .btn-premium::before { content:''; position:absolute; inset:0; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); transform:translateX(-100%) skewX(-15deg); transition:transform 0.7s ease; z-index:-1; }
         .btn-premium:hover::before { transform:translateX(100%); }
         .btn-premium:hover { box-shadow: 0 15px 35px rgba(37,99,235,0.4); transform:translateY(-2px); }
@@ -80,11 +82,11 @@
         .reveal-element { opacity:0; transform:translateY(30px) scale(0.98); transition:opacity 0.8s ease, transform 0.8s ease; }
         .reveal-element.is-visible { opacity:1; transform:translateY(0) scale(1); }
 
-        /* ── SCROLLBAR ── */
+        /* ── SCROLLBAR (Light Theme) ── */
         ::-webkit-scrollbar { width:6px; }
-        ::-webkit-scrollbar-track { background:#050505; }
-        ::-webkit-scrollbar-thumb { background:#1a1a1a; border-radius:10px; }
-        ::-webkit-scrollbar-thumb:hover { background:#3b82f6; }
+        ::-webkit-scrollbar-track { background:#f8fafc; }
+        ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:10px; }
+        ::-webkit-scrollbar-thumb:hover { background:#94a3b8; }
 
         /* ── MARQUEE ── */
         .marquee-wrapper { display:flex; overflow:hidden; white-space:nowrap; mask-image:linear-gradient(to right,transparent,black 15%,black 85%,transparent); }
@@ -107,10 +109,10 @@
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
         /* ══════════════════════════════════════════
-           HERO GRID BACKGROUND
+           HERO GRID BACKGROUND (Light Theme)
         ══════════════════════════════════════════ */
         .hero-grid-bg {
-            background-image: linear-gradient(rgba(37,99,235,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(37,99,235,0.04) 1px,transparent 1px);
+            background-image: linear-gradient(rgba(37,99,235,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(37,99,235,0.06) 1px,transparent 1px);
             background-size: 60px 60px;
         }
 
@@ -123,37 +125,33 @@
         @keyframes floatY { 0%,100%{transform:translateY(0px) rotate(-2deg)} 50%{transform:translateY(-12px) rotate(2deg)} }
 
         /* ══════════════════════════════════════════
-           PROGRESS LOADER BAR - Removed
+           DEVELOPMENT SECTION CARDS (Light Theme)
         ══════════════════════════════════════════ */
-
-        /* ══════════════════════════════════════════
-           DEVELOPMENT SECTION CARDS
-        ══════════════════════════════════════════ */
-        .dev-card { position:relative; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:28px; padding:2rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; cursor:pointer; }
+        .dev-card { position:relative; background:rgba(255,255,255,0.9); border:1px solid rgba(0,0,0,0.05); border-radius:28px; padding:2rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
         .dev-card::before { content:''; position:absolute; inset:0; opacity:0; transition:opacity 0.5s ease; border-radius:28px; }
-        .dev-card:hover { transform:translateY(-10px); border-color:var(--card-color,#3b82f6); box-shadow:0 25px 50px rgba(0,0,0,0.5), 0 0 40px rgba(var(--card-rgb,37,99,235),0.15); }
-        .dev-card:hover::before { opacity:1; background:radial-gradient(ellipse at top left, rgba(var(--card-rgb,37,99,235),0.08),transparent 70%); }
-        .dev-card .card-icon { width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:1.2rem; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1); border:1px solid rgba(255,255,255,0.08); }
+        .dev-card:hover { transform:translateY(-10px); border-color:var(--card-color,#3b82f6); box-shadow:0 25px 50px rgba(0,0,0,0.08), 0 0 40px rgba(var(--card-rgb,37,99,235),0.15); }
+        .dev-card:hover::before { opacity:1; background:radial-gradient(ellipse at top left, rgba(var(--card-rgb,37,99,235),0.05),transparent 70%); }
+        .dev-card .card-icon { width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:1.2rem; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1); border:1px solid rgba(0,0,0,0.05); }
         .dev-card:hover .card-icon { transform:scale(1.15) rotate(-5deg); }
-        .dev-card .tech-tag { display:inline-block; font-size:9px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; padding:3px 10px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); margin:2px; transition:all 0.3s; }
+        .dev-card .tech-tag { display:inline-block; font-size:9px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; padding:3px 10px; border-radius:999px; background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.05); margin:2px; transition:all 0.3s; color: #64748b; }
         .dev-card:hover .tech-tag { border-color:rgba(var(--card-rgb,37,99,235),0.4); background:rgba(var(--card-rgb,37,99,235),0.1); color:rgb(var(--card-rgb,37,99,235)); }
 
         /* ══════════════════════════════════════════
-           MARKETING SECTION CARDS
+           MARKETING SECTION CARDS (Light Theme)
         ══════════════════════════════════════════ */
-        .mkt-card { position:relative; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:28px; padding:2rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; }
+        .mkt-card { position:relative; background:rgba(255,255,255,0.9); border:1px solid rgba(0,0,0,0.05); border-radius:28px; padding:2rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
         .mkt-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--mkt-color,#3b82f6),transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s ease; border-radius:0 0 28px 28px; }
-        .mkt-card:hover { transform:translateY(-8px); border-color:rgba(255,255,255,0.12); box-shadow:0 20px 45px rgba(0,0,0,0.5); }
+        .mkt-card:hover { transform:translateY(-8px); border-color:rgba(0,0,0,0.08); box-shadow:0 20px 45px rgba(0,0,0,0.08); }
         .mkt-card:hover::after { transform:scaleX(1); }
-        .mkt-metric { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:0.6rem 1rem; text-align:center; transition:all 0.3s; }
-        .mkt-card:hover .mkt-metric { border-color:rgba(var(--mkt-rgb,37,99,235),0.3); background:rgba(var(--mkt-rgb,37,99,235),0.08); }
+        .mkt-metric { background:rgba(0,0,0,0.02); border:1px solid rgba(0,0,0,0.05); border-radius:12px; padding:0.6rem 1rem; text-align:center; transition:all 0.3s; }
+        .mkt-card:hover .mkt-metric { border-color:rgba(var(--mkt-rgb,37,99,235),0.3); background:rgba(var(--mkt-rgb,37,99,235),0.05); }
 
         /* ══════════════════════════════════════════
-           SECTION TAB SWITCHER
+           SECTION TAB SWITCHER (Light Theme)
         ══════════════════════════════════════════ */
-        .tab-pill { padding:10px 28px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.03); color:rgba(255,255,255,0.5); cursor:pointer; transition:all 0.35s ease; }
-        .tab-pill.active { background:#2563eb; color:white; border-color:#2563eb; box-shadow:0 0 25px rgba(37,99,235,0.4); }
-        .tab-pill:hover:not(.active) { border-color:rgba(255,255,255,0.2); color:white; background:rgba(255,255,255,0.06); }
+        .tab-pill { padding:10px 28px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(0,0,0,0.08); background:rgba(0,0,0,0.03); color:#64748b; cursor:pointer; transition:all 0.35s ease; }
+        .tab-pill.active { background:#2563eb; color:white; border-color:#2563eb; box-shadow:0 0 25px rgba(37,99,235,0.3); }
+        .tab-pill:hover:not(.active) { border-color:rgba(0,0,0,0.2); color:#0f172a; background:rgba(0,0,0,0.06); }
 
         /* ══════════════════════════════════════════
            NAVBAR ACTIVE LINK
@@ -178,77 +176,77 @@
         @keyframes glitch2 { 0%,100%{clip-path:inset(50% 0 30% 0)} 20%{clip-path:inset(10% 0 80% 0)} 40%{clip-path:inset(60% 0 25% 0)} 60%{clip-path:inset(5% 0 85% 0)} 80%{clip-path:inset(40% 0 40% 0)} }
         .logo-glitch { position:relative; }
         .logo-glitch::before, .logo-glitch::after { content:attr(data-text); position:absolute; left:0; top:0; }
-        .logo-glitch::before { color:#3b82f6; animation:glitch1 3.5s infinite steps(1); opacity:0.4; }
-        .logo-glitch::after { color:#8b5cf6; animation:glitch2 3.5s infinite steps(1); opacity:0.3; }
+        .logo-glitch::before { color:#3b82f6; animation:glitch1 3.5s infinite steps(1); opacity:0.6; }
+        .logo-glitch::after { color:#8b5cf6; animation:glitch2 3.5s infinite steps(1); opacity:0.5; }
 
         /* ══════════════════════════════════════════
-           SERVICE CARD SHINE
+           SERVICE CARD SHINE (Light Theme)
         ══════════════════════════════════════════ */
         .shine-card { position:relative; overflow:hidden; }
-        .shine-card::after { content:''; position:absolute; top:-50%; left:-75%; width:50%; height:200%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.06),transparent); transform:skewX(-20deg); transition:left 0.7s ease; }
+        .shine-card::after { content:''; position:absolute; top:-50%; left:-75%; width:50%; height:200%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent); transform:skewX(-20deg); transition:left 0.7s ease; }
         .shine-card:hover::after { left:150%; }
 
         /* ══════════════════════════════════════════
-           ANIMATED BACKGROUND MESH 
+           ANIMATED BACKGROUND MESH (Light Theme)
         ══════════════════════════════════════════ */
-        .mesh-bg { background: radial-gradient(ellipse 80% 80% at 20% 20%, rgba(37,99,235,0.04) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,0.04) 0%, transparent 60%); }
+        .mesh-bg { background: radial-gradient(ellipse 80% 80% at 20% 20%, rgba(37,99,235,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,0.06) 0%, transparent 60%); }
 
         /* ══════════════════════════════════════════
            NEW SECTION GLOW DIVIDERS
         ══════════════════════════════════════════ */
-        .section-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(37,99,235,0.4),rgba(139,92,246,0.4),transparent); margin:0; }
+        .section-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(37,99,235,0.2),rgba(139,92,246,0.2),transparent); margin:0; }
 
         /* ══════════════════════════════════════════
            STATS COUNTER ANIMATION
         ══════════════════════════════════════════ */
-        .stat-glow { text-shadow: 0 0 30px rgba(59,130,246,0.5); }
+        .stat-glow { text-shadow: 0 0 30px rgba(59,130,246,0.2); }
     </style>
 </head>
-<body class="relative bg-[#050505]">
+<body class="relative bg-slate-50">
 
     <!-- NAVBAR -->
     <nav id="navbar" class="fixed top-0 w-full z-50 nav-transition bg-transparent py-6 border-b border-transparent">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-6">
                 <a href="#home" class="text-2xl font-black tracking-tighter flex items-center gap-2 font-syne group js-magnetic" style="cursor:pointer">
-                    <div class="magnetic-child bg-blue-600 w-9 h-9 rounded-xl flex items-center justify-center text-sm shadow-[0_0_20px_rgba(37,99,235,0.4)] group-hover:scale-110 transition-transform relative text-white">
+                    <div class="magnetic-child bg-blue-600 w-9 h-9 rounded-xl flex items-center justify-center text-sm shadow-[0_0_20px_rgba(37,99,235,0.3)] group-hover:scale-110 transition-transform relative text-white">
                         W
                         <span class="absolute inset-0 rounded-xl bg-blue-500/30 animate-ping"></span>
                     </div>
-                    <span class="logo-glitch" data-text="webhurt">webhurt</span><span class="text-blue-500">.</span>
+                    <span class="logo-glitch text-slate-900" data-text="webhurt">webhurt</span><span class="text-blue-500">.</span>
                 </a>
-                <div class="hidden xl:flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10 shadow-inner w-[145px] justify-center tabular-nums">
+                <div class="hidden xl:flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-full border border-slate-200 shadow-sm w-[145px] justify-center tabular-nums">
                     <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                    <span id="visitor-count" class="text-[8px] font-black uppercase tracking-widest text-neutral-400">Live: 124 Visitors</span>
+                    <span id="visitor-count" class="text-[8px] font-black uppercase tracking-widest text-slate-500">Live: 124 Visitors</span>
                 </div>
             </div>
 
-            <div class="hidden lg:flex gap-4 xl:gap-8 text-[11px] font-bold uppercase tracking-[0.2em] items-center">
-                <div id="live-time" class="text-neutral-500 font-mono text-[9px] mr-2 hidden xl:block border border-white/5 px-3 py-1 rounded-md bg-white/5 w-[100px] text-center tabular-nums">--:--:--</div>
-                <a href="#about" class="hover:text-blue-500 transition relative group nav-link">About<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
-                <a href="#development" class="hover:text-blue-500 transition relative group nav-link">Development<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
-                <a href="#digital-marketing" class="hover:text-blue-500 transition relative group nav-link">Marketing<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
-                <a href="#pricing" class="hover:text-blue-500 transition relative group nav-link">Pricing<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
-                <a href="#inquiry" class="px-6 xl:px-8 py-3 bg-blue-600 rounded-full btn-premium text-white flex items-center gap-2 nav-link">
+            <div class="hidden lg:flex gap-4 xl:gap-8 text-[11px] font-bold uppercase tracking-[0.2em] items-center text-slate-700">
+                <div id="live-time" class="text-slate-500 font-mono text-[9px] mr-2 hidden xl:block border border-slate-200 px-3 py-1 rounded-md bg-white w-[100px] text-center tabular-nums">--:--:--</div>
+                <a href="#about" class="hover:text-blue-600 transition relative group nav-link">About<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
+                <a href="#development" class="hover:text-blue-600 transition relative group nav-link">Development<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
+                <a href="#digital-marketing" class="hover:text-blue-600 transition relative group nav-link">Marketing<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
+                <a href="#pricing" class="hover:text-blue-600 transition relative group nav-link">Pricing<span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-blue-500 transition-all group-hover:w-full"></span></a>
+                <a href="#inquiry" class="px-6 xl:px-8 py-3 bg-blue-600 rounded-full btn-premium text-white flex items-center gap-2 nav-link hover:text-white">
                     Free Strategy Call <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
             </div>
 
             <div class="flex items-center gap-4 lg:hidden">
-                <button id="mobile-toggle" class="text-2xl w-8 h-8 flex items-center justify-center text-white focus:outline-none focus:text-blue-500">
+                <button id="mobile-toggle" class="text-2xl w-8 h-8 flex items-center justify-center text-slate-900 focus:outline-none focus:text-blue-600">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden-el absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-3xl border-b border-white/5 py-10 flex-col items-center gap-8 z-50 shadow-2xl transition-opacity duration-300">
-            <a href="#about" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">ABOUT US</a>
-            <a href="#development" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">DEVELOPMENT</a>
-            <a href="#digital-marketing" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">MARKETING</a>
-            <a href="#process" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">OUR PROCESS</a>
-            <a href="#recent-works" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">RECENT WORKS</a>
-            <a href="#team" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">THE SQUAD</a>
-            <a href="#pricing" class="text-xl font-black text-white hover:text-blue-500 py-2 w-full text-center nav-link">PRICING</a>
+        <div id="mobile-menu" class="hidden-el absolute top-full left-0 w-full bg-white/95 backdrop-blur-3xl border-b border-slate-200 py-10 flex-col items-center gap-8 z-50 shadow-2xl transition-opacity duration-300">
+            <a href="#about" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">ABOUT US</a>
+            <a href="#development" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">DEVELOPMENT</a>
+            <a href="#digital-marketing" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">MARKETING</a>
+            <a href="#process" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">OUR PROCESS</a>
+            <a href="#recent-works" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">RECENT WORKS</a>
+            <a href="#team" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">THE SQUAD</a>
+            <a href="#pricing" class="text-xl font-black text-slate-900 hover:text-blue-600 py-2 w-full text-center nav-link">PRICING</a>
             <a href="#inquiry" class="px-8 py-4 mt-4 bg-blue-600 rounded-2xl text-white font-black w-[80%] text-center btn-premium nav-link">GET QUOTE</a>
         </div>
     </nav>
@@ -264,37 +262,37 @@
             <canvas id="hero-canvas"></canvas>
 
             <!-- Glow Blobs -->
-            <div class="absolute top-1/4 -left-20 w-[700px] h-[700px] bg-blue-600/8 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
-            <div class="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-purple-600/8 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay:-2s"></div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="absolute top-1/4 -left-20 w-[700px] h-[700px] bg-blue-400/20 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay:-2s"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-[100px] pointer-events-none"></div>
 
             <!-- Floating Ambient Badges -->
             <div class="hidden lg:block absolute top-32 right-16 floating-badge z-10">
                 <div class="glass-card-no-hover px-4 py-3 rounded-2xl flex items-center gap-3 text-xs font-bold">
-                    <div class="w-8 h-8 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 text-sm"><i class="fa-solid fa-check"></i></div>
-                    <div><p class="text-white font-black text-[11px]">Project Delivered</p><p class="text-neutral-500 text-[9px]">2 hours ago</p></div>
+                    <div class="w-8 h-8 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-sm"><i class="fa-solid fa-check"></i></div>
+                    <div><p class="text-slate-900 font-black text-[11px]">Project Delivered</p><p class="text-slate-500 text-[9px]">2 hours ago</p></div>
                 </div>
             </div>
             <div class="hidden lg:block absolute bottom-40 left-12 floating-badge z-10" style="animation-delay:-2s">
                 <div class="glass-card-no-hover px-4 py-3 rounded-2xl flex items-center gap-3 text-xs font-bold">
-                    <div class="w-8 h-8 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 text-sm"><i class="fa-solid fa-chart-line"></i></div>
-                    <div><p class="text-white font-black text-[11px]">+340% ROAS</p><p class="text-neutral-500 text-[9px]">Meta Ads Campaign</p></div>
+                    <div class="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-sm"><i class="fa-solid fa-chart-line"></i></div>
+                    <div><p class="text-slate-900 font-black text-[11px]">+340% ROAS</p><p class="text-slate-500 text-[9px]">Meta Ads Campaign</p></div>
                 </div>
             </div>
             <div class="hidden xl:block absolute top-1/2 right-8 floating-badge z-10" style="animation-delay:-1s">
                 <div class="glass-card-no-hover px-4 py-3 rounded-2xl flex items-center gap-3 text-xs font-bold">
-                    <div class="w-8 h-8 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 text-sm"><i class="fa-solid fa-robot"></i></div>
-                    <div><p class="text-white font-black text-[11px]">AI Integration</p><p class="text-neutral-500 text-[9px]">Live & Running</p></div>
+                    <div class="w-8 h-8 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-sm"><i class="fa-solid fa-robot"></i></div>
+                    <div><p class="text-slate-900 font-black text-[11px]">AI Integration</p><p class="text-slate-500 text-[9px]">Live & Running</p></div>
                 </div>
             </div>
 
             <div class="max-w-6xl mx-auto text-center relative z-10 mt-10">
                 <!-- Badge -->
-                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/[0.03] border border-white/10 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-lg backdrop-blur-md reveal-element delay-100">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-sm backdrop-blur-md reveal-element delay-100">
                     <div class="flex -space-x-2 mr-2">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Client 1" class="w-6 h-6 rounded-full border border-black" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Client 2" class="w-6 h-6 rounded-full border border-black" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client 3" class="w-6 h-6 rounded-full border border-black" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Client 1" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Client 2" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client 3" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
                     </div>
                     <div class="relative">
                         <span class="w-2 h-2 bg-blue-500 rounded-full inline-block mr-1"></span>
@@ -304,16 +302,16 @@
                 </div>
 
                 <!-- Main Heading -->
-                <h1 class="text-5xl md:text-[6.5rem] font-black leading-[0.95] tracking-tighter mb-6 font-syne reveal-element delay-200">
+                <h1 class="text-5xl md:text-[6.5rem] font-black leading-[0.95] tracking-tighter mb-6 font-syne reveal-element delay-200 text-slate-900">
                     We Build <span class="gradient-text">Growth</span><br/>
-                    <span class="text-neutral-600">Not Just Platforms.</span>
+                    <span class="text-slate-400">Not Just Platforms.</span>
                 </h1>
 
                 <!-- Typewriter Subtitle -->
-                <div class="max-w-3xl mx-auto text-neutral-400 text-lg md:text-2xl font-medium mb-5 leading-relaxed px-4 reveal-element delay-250">
-                    From custom <span id="typewriter-word" class="text-white font-black">Websites</span><span class="typewriter-cursor"></span> to AI systems — we engineer everything your brand needs to dominate.
+                <div class="max-w-3xl mx-auto text-slate-600 text-lg md:text-2xl font-medium mb-5 leading-relaxed px-4 reveal-element delay-250">
+                    From custom <span id="typewriter-word" class="text-slate-900 font-black">Websites</span><span class="typewriter-cursor"></span> to AI systems — we engineer everything your brand needs to dominate.
                 </div>
-                <p class="max-w-2xl mx-auto text-neutral-500 text-base mb-14 leading-relaxed px-4 reveal-element delay-300">Transparent process meets modern engineering. Scalable Software, fast Web solutions, and clean execution.</p>
+                <p class="max-w-2xl mx-auto text-slate-500 text-base mb-14 leading-relaxed px-4 reveal-element delay-300">Transparent process meets modern engineering. Scalable Software, fast Web solutions, and clean execution.</p>
 
                 <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6 px-4 md:px-0 reveal-element delay-400">
@@ -321,33 +319,33 @@
                         <a href="#pricing" class="block w-full sm:w-auto px-12 py-5 bg-blue-600 rounded-2xl font-black text-lg btn-premium text-white touch-manipulation nav-link">
                             View Pricing Models →
                         </a>
-                        <p class="absolute -bottom-6 left-0 right-0 text-center text-[9px] text-blue-400 font-bold uppercase tracking-widest"><i class="fa-solid fa-rocket mr-1"></i> Launch Faster Today</p>
+                        <p class="absolute -bottom-6 left-0 right-0 text-center text-[9px] text-blue-500 font-bold uppercase tracking-widest"><i class="fa-solid fa-rocket mr-1"></i> Launch Faster Today</p>
                     </div>
-                    <a href="#recent-works" class="block w-full sm:w-auto px-12 py-5 glass-card rounded-2xl font-black text-lg hover:text-blue-500 text-center touch-manipulation nav-link">
+                    <a href="#recent-works" class="block w-full sm:w-auto px-12 py-5 glass-card rounded-2xl font-black text-lg text-slate-900 hover:text-blue-600 text-center touch-manipulation nav-link">
                         Explore Works
                     </a>
                 </div>
 
                 <!-- Trust Badges -->
-                <div class="mt-16 text-neutral-500 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-[10px] font-black uppercase tracking-widest px-4 reveal-element delay-500">
-                    <span><i class="fa-solid fa-lock text-green-500 mr-1"></i> Secure Delivery</span><span class="hidden md:inline text-white/10">•</span>
-                    <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1"></i> Agile Operations</span><span class="hidden md:inline text-white/10">•</span>
-                    <span><i class="fa-solid fa-check-double text-purple-500 mr-1"></i> Trusted Local Tech Hub</span><span class="hidden md:inline text-white/10">•</span>
+                <div class="mt-16 text-slate-600 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-[10px] font-black uppercase tracking-widest px-4 reveal-element delay-500">
+                    <span><i class="fa-solid fa-lock text-green-500 mr-1"></i> Secure Delivery</span><span class="hidden md:inline text-slate-300">•</span>
+                    <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1"></i> Agile Operations</span><span class="hidden md:inline text-slate-300">•</span>
+                    <span><i class="fa-solid fa-check-double text-purple-500 mr-1"></i> Trusted Local Tech Hub</span><span class="hidden md:inline text-slate-300">•</span>
                     <span><i class="fa-solid fa-headset text-cyan-500 mr-1"></i> 24/7 Support</span>
                 </div>
             </div>
         </section>
 
         <!-- MARQUEE -->
-        <section class="py-10 border-y border-white/5 bg-[#080808] reveal-element">
+        <section class="py-10 border-y border-slate-200 bg-white reveal-element">
             <div class="max-w-7xl mx-auto flex items-center">
-                <div class="w-32 flex-shrink-0 text-[10px] font-black uppercase tracking-widest text-neutral-500 hidden md:block border-r border-white/10">Our Stack &<br/>Ecosystem</div>
+                <div class="w-32 flex-shrink-0 text-[10px] font-black uppercase tracking-widest text-slate-500 hidden md:block border-r border-slate-200">Our Stack &<br/>Ecosystem</div>
                 <div class="flex-grow overflow-hidden marquee-wrapper ml-0 md:ml-8" id="marquee-box"></div>
             </div>
         </section>
 
         <!-- STATS -->
-        <section class="py-20 px-6 border-y border-white/5 bg-white/[0.01] reveal-element">
+        <section class="py-20 px-6 border-y border-slate-200 bg-slate-50 reveal-element">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12" id="stats-grid"></div>
         </section>
 
@@ -359,13 +357,13 @@
             <div class="max-w-7xl mx-auto">
                 <!-- Section Header -->
                 <div class="text-center mb-20 reveal-element">
-                    <span class="inline-flex items-center gap-2 text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4">
+                    <span class="inline-flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">
                         <i class="fa-solid fa-code"></i> What We Build
                     </span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white mt-3">
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900 mt-3">
                         Development <span class="gradient-text">Services</span>
                     </h2>
-                    <p class="text-neutral-500 mt-5 max-w-2xl mx-auto text-base leading-relaxed">From pixel-perfect websites to enterprise-grade software — we engineer everything that powers your digital presence.</p>
+                    <p class="text-slate-600 mt-5 max-w-2xl mx-auto text-base leading-relaxed">From pixel-perfect websites to enterprise-grade software — we engineer everything that powers your digital presence.</p>
                 </div>
 
                 <!-- Dev Cards Grid -->
@@ -373,7 +371,7 @@
 
                 <!-- Bottom CTA -->
                 <div class="mt-14 text-center reveal-element">
-                    <a href="#inquiry" class="inline-flex items-center gap-3 px-10 py-4 bg-white/5 border border-white/10 rounded-2xl font-black text-sm uppercase tracking-widest text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 nav-link">
+                    <a href="#inquiry" class="inline-flex items-center gap-3 px-10 py-4 bg-white border border-slate-200 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-900 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 shadow-sm nav-link">
                         Discuss Your Project <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -384,17 +382,17 @@
         <!-- ════════════════════════════════════
              DIGITAL MARKETING SECTION 
         ════════════════════════════════════ -->
-        <section id="digital-marketing" class="py-32 px-6 bg-[#060606] reveal-element">
+        <section id="digital-marketing" class="py-32 px-6 bg-slate-100 reveal-element">
             <div class="max-w-7xl mx-auto">
                 <!-- Section Header -->
                 <div class="text-center mb-20 reveal-element">
-                    <span class="inline-flex items-center gap-2 text-purple-500 font-black text-xs uppercase tracking-[0.4em] mb-4">
+                    <span class="inline-flex items-center gap-2 text-purple-600 font-black text-xs uppercase tracking-[0.4em] mb-4">
                         <i class="fa-solid fa-chart-line"></i> How We Grow You
                     </span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white mt-3">
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900 mt-3">
                         Digital <span style="background:linear-gradient(135deg,#8b5cf6,#ec4899,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 4s linear infinite">Marketing</span>
                     </h2>
-                    <p class="text-neutral-500 mt-5 max-w-2xl mx-auto text-base leading-relaxed">Data-driven campaigns, precision targeting, and growth strategies that deliver measurable ROI for your brand.</p>
+                    <p class="text-slate-600 mt-5 max-w-2xl mx-auto text-base leading-relaxed">Data-driven campaigns, precision targeting, and growth strategies that deliver measurable ROI for your brand.</p>
                 </div>
 
                 <!-- Platform Tab Switcher -->
@@ -404,23 +402,23 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="mkt-grid"></div>
 
                 <!-- Bottom Stats Strip -->
-                <div class="mt-16 glass-card-no-hover rounded-[28px] p-8 md:p-10 reveal-element">
+                <div class="mt-16 bg-white shadow-sm border border-slate-200 rounded-[28px] p-8 md:p-10 reveal-element">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                         <div>
-                            <p class="text-3xl md:text-4xl font-black text-white font-syne stat-glow">340%</p>
-                            <p class="text-[10px] font-black text-neutral-500 uppercase tracking-widest mt-1">Avg ROAS</p>
+                            <p class="text-3xl md:text-4xl font-black text-slate-900 font-syne stat-glow">340%</p>
+                            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">Avg ROAS</p>
                         </div>
                         <div>
-                            <p class="text-3xl md:text-4xl font-black text-white font-syne stat-glow">₹2.4/</p>
-                            <p class="text-[10px] font-black text-neutral-500 uppercase tracking-widest mt-1">Cost Per Click</p>
+                            <p class="text-3xl md:text-4xl font-black text-slate-900 font-syne stat-glow">₹2.4/</p>
+                            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">Cost Per Click</p>
                         </div>
                         <div>
-                            <p class="text-3xl md:text-4xl font-black text-white font-syne stat-glow">Top 3</p>
-                            <p class="text-[10px] font-black text-neutral-500 uppercase tracking-widest mt-1">SEO Rankings</p>
+                            <p class="text-3xl md:text-4xl font-black text-slate-900 font-syne stat-glow">Top 3</p>
+                            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">SEO Rankings</p>
                         </div>
                         <div>
-                            <p class="text-3xl md:text-4xl font-black text-white font-syne stat-glow">48h</p>
-                            <p class="text-[10px] font-black text-neutral-500 uppercase tracking-widest mt-1">Campaign Launch</p>
+                            <p class="text-3xl md:text-4xl font-black text-slate-900 font-syne stat-glow">48h</p>
+                            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mt-1">Campaign Launch</p>
                         </div>
                     </div>
                 </div>
@@ -439,9 +437,9 @@
         <section id="process" class="py-32 px-6 reveal-element">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-20 reveal-element">
-                    <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">How We Work</span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white">Our Seamless <span class="text-blue-600">Process</span></h2>
-                    <p class="text-neutral-500 mt-4 max-w-xl mx-auto">No confusing jargon. Just a clear, proven step-by-step roadmap to launch your digital identity effectively.</p>
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">How We Work</span>
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900">Our Seamless <span class="text-blue-600">Process</span></h2>
+                    <p class="text-slate-600 mt-4 max-w-xl mx-auto">No confusing jargon. Just a clear, proven step-by-step roadmap to launch your digital identity effectively.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="process-grid"></div>
             </div>
@@ -450,17 +448,17 @@
         <!-- ════════════════════════════════════
              RECENT WORKS PORTFOLIO (Trust Section)
         ════════════════════════════════════ -->
-        <section id="recent-works" class="py-24 md:py-32 px-6 bg-[#080808] reveal-element border-y border-white/5">
+        <section id="recent-works" class="py-24 md:py-32 px-6 bg-white reveal-element border-y border-slate-200">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10 mb-16 md:mb-24 reveal-element">
                     <div class="max-w-2xl">
-                        <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Our Portfolio</span>
-                        <h2 class="text-4xl md:text-6xl font-black font-syne leading-tight text-white">Recent <span class="text-blue-600">Works</span></h2>
-                        <p class="text-neutral-500 mt-4 text-base">Explore how we’ve transformed startups through custom Web Development, precise Ad Marketing, SEO, and Game Development systems.</p>
+                        <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Our Portfolio</span>
+                        <h2 class="text-4xl md:text-6xl font-black font-syne leading-tight text-slate-900">Recent <span class="text-blue-600">Works</span></h2>
+                        <p class="text-slate-600 mt-4 text-base">Explore how we’ve transformed startups through custom Web Development, precise Ad Marketing, SEO, and Game Development systems.</p>
                     </div>
-                    <a href="#inquiry" class="px-8 py-4 glass-card rounded-full font-black text-xs uppercase tracking-widest text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 w-full sm:w-auto text-center nav-link">Start Your Project</a>
+                    <a href="#inquiry" class="px-8 py-4 glass-card rounded-full font-black text-xs uppercase tracking-widest text-slate-900 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 w-full sm:w-auto text-center nav-link">Start Your Project</a>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-white" id="cases-grid"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cases-grid"></div>
             </div>
         </section>
 
@@ -468,12 +466,12 @@
         <section id="pricing" class="py-32 px-6 reveal-element">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 md:mb-20 reveal-element">
-                    <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Investment</span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white">Pricing <span class="text-blue-600">Models</span></h2>
-                    <p class="text-neutral-500 mt-4 max-w-2xl mx-auto text-base">Transparent and affordable pricing designed specifically for growing businesses and modern startups.</p>
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Investment</span>
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900">Pricing <span class="text-blue-600">Models</span></h2>
+                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-base">Transparent and affordable pricing designed specifically for growing businesses and modern startups.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-white relative" id="pricing-grid"></div>
-                <div class="mt-12 text-center text-neutral-500 flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold uppercase tracking-widest px-4 reveal-element">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative" id="pricing-grid"></div>
+                <div class="mt-12 text-center text-slate-500 flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold uppercase tracking-widest px-4 reveal-element">
                     <span><i class="fa-solid fa-shield-halved text-blue-500"></i> 100% Secure Processing</span><span class="hidden md:inline">•</span>
                     <span><i class="fa-solid fa-file-contract text-blue-500"></i> Strict Privacy Kept</span>
                 </div>
@@ -481,92 +479,92 @@
         </section>
 
         <!-- FAQs -->
-        <section class="py-24 md:py-32 px-6 bg-[#080808] reveal-element border-t border-white/5">
+        <section class="py-24 md:py-32 px-6 bg-slate-50 reveal-element border-t border-slate-200">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16 md:mb-20 reveal-element">
-                    <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Need Clarity?</span>
-                    <h2 class="text-4xl md:text-5xl font-black font-syne text-white">Frequent <span class="text-blue-600">Questions</span></h2>
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Need Clarity?</span>
+                    <h2 class="text-4xl md:text-5xl font-black font-syne text-slate-900">Frequent <span class="text-blue-600">Questions</span></h2>
                 </div>
                 <div class="space-y-4" id="faqs-grid"></div>
                 <div class="mt-10 text-center reveal-element">
-                    <p class="text-neutral-500 text-sm mb-4">Have specific business questions?</p>
-                    <a href="#inquiry" class="text-blue-500 font-black text-xs uppercase tracking-widest hover:text-white transition inline-flex items-center gap-2 nav-link">Ask Us Directly <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="text-slate-600 text-sm mb-4">Have specific business questions?</p>
+                    <a href="#inquiry" class="text-blue-600 font-black text-xs uppercase tracking-widest hover:text-blue-800 transition inline-flex items-center gap-2 nav-link">Ask Us Directly <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- TESTIMONIALS -->
-        <section class="py-24 md:py-32 px-6 overflow-hidden border-t border-white/5 reveal-element">
+        <section class="py-24 md:py-32 px-6 overflow-hidden border-t border-slate-200 reveal-element">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 md:mb-20 reveal-element">
-                    <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Validation</span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white">Client <span class="text-blue-600">Voices</span></h2>
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">Validation</span>
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900">Client <span class="text-blue-600">Voices</span></h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto" id="testimonials-grid"></div>
             </div>
         </section>
 
         <!-- TEAM -->
-        <section id="team" class="py-24 md:py-32 px-6 bg-[#080808] reveal-element border-t border-white/5">
+        <section id="team" class="py-24 md:py-32 px-6 bg-white reveal-element border-t border-slate-200">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 md:mb-20 reveal-element">
-                    <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">The Squad</span>
-                    <h2 class="text-4xl md:text-6xl font-black font-syne text-white">Elite <span class="text-blue-600">Talent</span></h2>
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block">The Squad</span>
+                    <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900">Elite <span class="text-blue-600">Talent</span></h2>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12" id="team-grid"></div>
             </div>
         </section>
 
         <!-- CONTACT -->
-        <section id="inquiry" class="py-24 md:py-32 px-4 md:px-6 relative reveal-element border-t border-white/5">
-            <div class="max-w-5xl mx-auto glass-card-no-hover p-6 md:p-20 rounded-[32px] md:rounded-[60px] relative overflow-hidden text-white shadow-2xl reveal-element">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] pointer-events-none hidden md:block"></div>
-                <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 blur-[120px] pointer-events-none hidden md:block"></div>
+        <section id="inquiry" class="py-24 md:py-32 px-4 md:px-6 relative reveal-element border-t border-slate-200">
+            <div class="max-w-5xl mx-auto bg-white border border-slate-200 p-6 md:p-20 rounded-[32px] md:rounded-[60px] relative overflow-hidden text-slate-900 shadow-2xl reveal-element">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 blur-[120px] pointer-events-none hidden md:block"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-400/10 blur-[120px] pointer-events-none hidden md:block"></div>
                 <div class="text-center mb-10 md:mb-16 relative z-10">
-                    <h2 class="text-3xl md:text-6xl font-black mb-4 md:mb-6 font-syne">Let's Build Your <span class="text-blue-600">Platform.</span></h2>
-                    <p class="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto px-4">Book a free strategy session with our team to uncover clear implementation methods tailored for you.</p>
+                    <h2 class="text-3xl md:text-6xl font-black mb-4 md:mb-6 font-syne text-slate-900">Let's Build Your <span class="text-blue-600">Platform.</span></h2>
+                    <p class="text-slate-600 text-base md:text-xl max-w-2xl mx-auto px-4">Book a free strategy session with our team to uncover clear implementation methods tailored for you.</p>
                 </div>
                 <form id="contact-form" class="grid md:grid-cols-2 gap-6 md:gap-8 relative z-10">
                     <div class="space-y-2 group">
-                        <label class="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-500 transition-colors">Full Name</label>
-                        <input name="name" type="text" placeholder="John Doe" required class="w-full bg-white/5 border border-white/10 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition font-bold text-white shadow-inner">
+                        <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-600 transition-colors">Full Name</label>
+                        <input name="name" type="text" placeholder="John Doe" required class="w-full bg-slate-50 border border-slate-200 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition font-bold text-slate-900 shadow-sm">
                     </div>
                     <div class="space-y-2 group">
-                        <label class="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-500 transition-colors">Business Email</label>
-                        <input name="email" type="email" placeholder="john@company.com" required class="w-full bg-white/5 border border-white/10 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition font-bold text-white shadow-inner">
+                        <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-600 transition-colors">Business Email</label>
+                        <input name="email" type="email" placeholder="john@company.com" required class="w-full bg-slate-50 border border-slate-200 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition font-bold text-slate-900 shadow-sm">
                     </div>
                     <div class="space-y-2 group">
-                        <label class="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-500 transition-colors">Service Required</label>
-                        <select name="service" required class="w-full bg-white/5 border border-white/10 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition font-bold text-white appearance-none cursor-pointer">
-                            <option value="" class="bg-[#0a0a0a] text-neutral-500">Select Capability</option>
-                            <option value="E-Commerce Starter" class="bg-[#0a0a0a] text-blue-400 font-black">🔥 E-COMMERCE STARTER (₹30k)</option>
-                            <option value="Web Development" class="bg-[#0a0a0a]">Web Development</option>
-                            <option value="Custom Web Dev" class="bg-[#0a0a0a]">Custom Web Development</option>
-                            <option value="Software Dev" class="bg-[#0a0a0a]">Custom Software</option>
-                            <option value="AI Build" class="bg-[#0a0a0a]">AI Build & Integration</option>
-                            <option value="Game Dev" class="bg-[#0a0a0a]">Game Development</option>
-                            <option value="Mobile App" class="bg-[#0a0a0a]">Mobile App Development</option>
-                            <option value="Google Ads" class="bg-[#0a0a0a]">Google Ads / PPC</option>
-                            <option value="Meta Ads" class="bg-[#0a0a0a]">Meta Ads (Facebook & Instagram)</option>
-                            <option value="SEO" class="bg-[#0a0a0a]">SEO & Rankings</option>
-                            <option value="Email Marketing" class="bg-[#0a0a0a]">Email Marketing</option>
-                            <option value="Others" class="bg-[#0a0a0a]">Others</option>
+                        <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-600 transition-colors">Service Required</label>
+                        <select name="service" required class="w-full bg-slate-50 border border-slate-200 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition font-bold text-slate-900 appearance-none cursor-pointer">
+                            <option value="" class="text-slate-500 bg-white">Select Capability</option>
+                            <option value="E-Commerce Starter" class="text-blue-600 font-black bg-white">🔥 E-COMMERCE STARTER (₹30k)</option>
+                            <option value="Web Development" class="bg-white">Web Development</option>
+                            <option value="Custom Web Dev" class="bg-white">Custom Web Development</option>
+                            <option value="Software Dev" class="bg-white">Custom Software</option>
+                            <option value="AI Build" class="bg-white">AI Build & Integration</option>
+                            <option value="Game Dev" class="bg-white">Game Development</option>
+                            <option value="Mobile App" class="bg-white">Mobile App Development</option>
+                            <option value="Google Ads" class="bg-white">Google Ads / PPC</option>
+                            <option value="Meta Ads" class="bg-white">Meta Ads (Facebook & Instagram)</option>
+                            <option value="SEO" class="bg-white">SEO & Rankings</option>
+                            <option value="Email Marketing" class="bg-white">Email Marketing</option>
+                            <option value="Others" class="bg-white">Others</option>
                         </select>
                     </div>
                     <div class="space-y-2 group">
-                        <label class="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-500 transition-colors">Monthly Budget</label>
-                        <select name="budget" required class="w-full bg-white/5 border border-white/10 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition font-bold text-white appearance-none cursor-pointer">
-                            <option value="" class="bg-[#0a0a0a] text-neutral-500">Select Budget</option>
-                            <option class="bg-[#0a0a0a]">₹6,000 - ₹12,000</option>
-                            <option class="bg-[#0a0a0a]">₹15,000 - ₹25,000</option>
-                            <option class="bg-[#0a0a0a]">₹25,000 - ₹50,000</option>
-                            <option class="bg-[#0a0a0a]">₹30,000 (E-Commerce Plan)</option>
-                            <option class="bg-[#0a0a0a]">₹1,00,000+</option>
+                        <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-600 transition-colors">Monthly Budget</label>
+                        <select name="budget" required class="w-full bg-slate-50 border border-slate-200 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition font-bold text-slate-900 appearance-none cursor-pointer">
+                            <option value="" class="text-slate-500 bg-white">Select Budget</option>
+                            <option class="bg-white">₹6,000 - ₹12,000</option>
+                            <option class="bg-white">₹15,000 - ₹25,000</option>
+                            <option class="bg-white">₹25,000 - ₹50,000</option>
+                            <option class="bg-white">₹30,000 (E-Commerce Plan)</option>
+                            <option class="bg-white">₹1,00,000+</option>
                         </select>
                     </div>
                     <div class="md:col-span-2 space-y-2 group">
-                        <label class="text-[10px] font-black text-neutral-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-500 transition-colors">Project Goals</label>
-                        <textarea name="msg" placeholder="Tell us about your core objective or challenges..." class="w-full bg-white/5 border border-white/10 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white/10 transition h-28 md:h-32 font-bold text-white shadow-inner resize-none"></textarea>
+                        <label class="text-[10px] font-black text-slate-500 uppercase tracking-widest ml-2 md:ml-4 group-focus-within:text-blue-600 transition-colors">Project Goals</label>
+                        <textarea name="msg" placeholder="Tell us about your core objective or challenges..." class="w-full bg-slate-50 border border-slate-200 p-5 md:p-6 rounded-2xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition h-28 md:h-32 font-bold text-slate-900 shadow-sm resize-none"></textarea>
                     </div>
                     <button type="submit" class="md:col-span-2 bg-blue-600 py-5 md:py-6 rounded-2xl font-black text-base md:text-xl uppercase tracking-[0.2em] btn-premium text-white shadow-[0_10px_30px_rgba(37,99,235,0.4)] flex items-center justify-center gap-3">
                         Claim Strategy Review <i class="fa-solid fa-arrow-right"></i>
@@ -582,30 +580,30 @@
         <section class="min-h-screen pt-32 md:pt-40 pb-20 px-4 md:px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 md:mb-20 relative z-10 reveal-element">
-                    <div class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-500 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] mb-4 md:mb-6">
+                    <div class="inline-flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-600 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] mb-4 md:mb-6">
                         <i class="fa-solid fa-rocket"></i> Startup Roots, Global Reach
                     </div>
-                    <h1 class="text-4xl md:text-[5.5rem] font-black leading-tight tracking-tighter mb-4 md:mb-6 font-syne text-white">Code With <span class="text-blue-600">Clarity</span>.</h1>
-                    <p class="max-w-3xl mx-auto text-neutral-400 text-base md:text-xl font-medium leading-relaxed">webhurt emerged with a direct objective: provide startups and businesses with a tech partner they can finally trust.</p>
+                    <h1 class="text-4xl md:text-[5.5rem] font-black leading-tight tracking-tighter mb-4 md:mb-6 font-syne text-slate-900">Code With <span class="text-blue-600">Clarity</span>.</h1>
+                    <p class="max-w-3xl mx-auto text-slate-600 text-base md:text-xl font-medium leading-relaxed">webhurt emerged with a direct objective: provide startups and businesses with a tech partner they can finally trust.</p>
                 </div>
 
-                <div class="glass-card-no-hover rounded-[32px] md:rounded-[60px] overflow-hidden relative mb-16 md:mb-24 shadow-2xl reveal-element">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] pointer-events-none hidden md:block"></div>
+                <div class="bg-white border border-slate-200 rounded-[32px] md:rounded-[60px] overflow-hidden relative mb-16 md:mb-24 shadow-2xl reveal-element">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 blur-[120px] pointer-events-none hidden md:block"></div>
                     <div class="grid md:grid-cols-2 items-center">
                         <div class="h-[300px] md:h-[600px] relative">
                             <img src="ceo.jpg" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'" alt="CEO webhurt" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0a0a0a] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900/80 to-transparent"></div>
                             <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10">
                                 <h3 class="text-2xl md:text-3xl font-black font-syne text-white mb-1">Aayan Siddiqui</h3>
-                                <p class="text-blue-500 font-black text-[10px] md:text-xs uppercase tracking-widest">Founder & CEO</p>
+                                <p class="text-blue-400 font-black text-[10px] md:text-xs uppercase tracking-widest">Founder & CEO</p>
                             </div>
                         </div>
                         <div class="p-8 md:p-16 relative z-10">
                             <i class="fa-solid fa-quote-left text-4xl md:text-5xl text-blue-500/20 mb-4 md:mb-6 block"></i>
-                            <h2 class="text-xl md:text-3xl font-black font-syne text-white mb-4 md:mb-6 leading-tight">"A solid idea needs equally solid code to survive the digital market."</h2>
-                            <p class="text-neutral-400 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">As a rapidly growing agency, webhurt is built on an Agile foundation. We engineer clean systems from scratch that allow absolute custom features, robust architecture, and genuine Search Engine clarity. It's about crafting the best tech iteration of your ideas.</p>
+                            <h2 class="text-xl md:text-3xl font-black font-syne text-slate-900 mb-4 md:mb-6 leading-tight">"A solid idea needs equally solid code to survive the digital market."</h2>
+                            <p class="text-slate-600 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">As a rapidly growing agency, webhurt is built on an Agile foundation. We engineer clean systems from scratch that allow absolute custom features, robust architecture, and genuine Search Engine clarity. It's about crafting the best tech iteration of your ideas.</p>
                             <div class="mt-4 md:mt-8">
-                                <img src="sign.jpg" alt="Aayan Siddiqui Signature" class="w-40 md:w-56 h-auto opacity-90 brightness-110 contrast-125 invert" loading="lazy">
+                                <img src="sign.jpg" alt="Aayan Siddiqui Signature" class="w-40 md:w-56 h-auto opacity-80 contrast-125 mix-blend-multiply" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -613,50 +611,50 @@
 
                 <div class="mb-20 md:mb-24 reveal-element">
                     <div class="text-center mb-10 md:mb-16">
-                        <span class="text-blue-500 font-black text-xs uppercase tracking-[0.4em] mb-3 block">Why Choose Us</span>
-                        <h2 class="text-3xl md:text-5xl font-black font-syne text-white">Our Core <span class="text-blue-600">Values</span></h2>
+                        <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-3 block">Why Choose Us</span>
+                        <h2 class="text-3xl md:text-5xl font-black font-syne text-slate-900">Our Core <span class="text-blue-600">Values</span></h2>
                     </div>
                     <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
-                        <div class="glass-card-no-hover p-8 md:p-10 rounded-[32px]">
+                        <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px]">
                             <i class="fa-solid fa-fingerprint text-4xl text-blue-500 mb-6 block"></i>
-                            <h3 class="text-2xl font-black font-syne text-white mb-3">Absolute Transparency</h3>
-                            <p class="text-neutral-400 text-sm">Clear pricing. Strict timelines. Real progress updates throughout our development cycles.</p>
+                            <h3 class="text-2xl font-black font-syne text-slate-900 mb-3">Absolute Transparency</h3>
+                            <p class="text-slate-600 text-sm">Clear pricing. Strict timelines. Real progress updates throughout our development cycles.</p>
                         </div>
-                        <div class="glass-card-no-hover p-8 md:p-10 rounded-[32px]">
+                        <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px]">
                             <i class="fa-solid fa-shield-halved text-4xl text-blue-500 mb-6 block"></i>
-                            <h3 class="text-2xl font-black font-syne text-white mb-3">Security Focus</h3>
-                            <p class="text-neutral-400 text-sm">We code maintaining critical database protections, server frameworks, and compliance guidelines.</p>
+                            <h3 class="text-2xl font-black font-syne text-slate-900 mb-3">Security Focus</h3>
+                            <p class="text-slate-600 text-sm">We code maintaining critical database protections, server frameworks, and compliance guidelines.</p>
                         </div>
-                        <div class="glass-card-no-hover p-8 md:p-10 rounded-[32px]">
+                        <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px]">
                             <i class="fa-solid fa-arrows-rotate text-4xl text-blue-500 mb-6 block"></i>
-                            <h3 class="text-2xl font-black font-syne text-white mb-3">Agile Scalability</h3>
-                            <p class="text-neutral-400 text-sm">Building flexible ecosystems ensures you don't rebuild platforms. The code adapts as your brand grows.</p>
+                            <h3 class="text-2xl font-black font-syne text-slate-900 mb-3">Agile Scalability</h3>
+                            <p class="text-slate-600 text-sm">Building flexible ecosystems ensures you don't rebuild platforms. The code adapts as your brand grows.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6 md:gap-8 reveal-element">
-                    <div class="glass-card p-8 md:p-14 rounded-[32px] md:rounded-[40px] relative group">
-                        <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 md:mb-8 text-2xl md:text-3xl group-hover:scale-110 transition-transform">
+                    <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-14 rounded-[32px] md:rounded-[40px] relative group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 md:mb-8 text-2xl md:text-3xl group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-map-location-dot"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-black font-syne text-white mb-3 md:mb-4">Development Core</h3>
-                        <p class="text-neutral-400 text-base md:text-lg leading-relaxed mb-6">Sector 62, Electronic City IT Hub,<br/>Noida, Uttar Pradesh 201309,<br/>India</p>
-                        <a href="https://maps.google.com/?q=Sector+62+Noida" target="_blank" class="inline-flex items-center gap-2 text-blue-500 font-black text-[10px] md:text-xs uppercase tracking-widest hover:text-white transition-colors">View on Maps <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 class="text-xl md:text-2xl font-black font-syne text-slate-900 mb-3 md:mb-4">Development Core</h3>
+                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6">Sector 62, Electronic City IT Hub,<br/>Noida, Uttar Pradesh 201309,<br/>India</p>
+                        <a href="https://maps.google.com/?q=Sector+62+Noida" target="_blank" class="inline-flex items-center gap-2 text-blue-600 font-black text-[10px] md:text-xs uppercase tracking-widest hover:text-blue-800 transition-colors">View on Maps <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="glass-card p-8 md:p-14 rounded-[32px] md:rounded-[40px] relative group">
-                        <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 md:mb-8 text-2xl md:text-3xl group-hover:scale-110 transition-transform">
+                    <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-14 rounded-[32px] md:rounded-[40px] relative group">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 md:mb-8 text-2xl md:text-3xl group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-headset"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-black font-syne text-white mb-3 md:mb-4">Direct Touchpoint</h3>
-                        <p class="text-neutral-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8">Our operational managers ensure you connect fast for any queries or active implementations.</p>
+                        <h3 class="text-xl md:text-2xl font-black font-syne text-slate-900 mb-3 md:mb-4">Direct Touchpoint</h3>
+                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8">Our operational managers ensure you connect fast for any queries or active implementations.</p>
                         <div class="space-y-4">
-                            <a href="tel:+919411283572" class="flex items-center gap-4 text-white hover:text-blue-500 transition-colors">
-                                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
+                            <a href="tel:+919411283572" class="flex items-center gap-4 text-slate-900 hover:text-blue-600 transition-colors">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
                                 <span class="font-black text-base md:text-lg">+91 94112 83572</span>
                             </a>
-                            <a href="https://wa.me/919058327063" target="_blank" class="flex items-center gap-4 text-white hover:text-green-500 transition-colors">
-                                <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><i class="fa-brands fa-whatsapp text-green-500"></i></div>
+                            <a href="https://wa.me/919058327063" target="_blank" class="flex items-center gap-4 text-slate-900 hover:text-green-600 transition-colors">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center"><i class="fa-brands fa-whatsapp text-green-600"></i></div>
                                 <span class="font-black text-base md:text-lg">+91 90583 27063</span>
                             </a>
                         </div>
@@ -664,71 +662,71 @@
                 </div>
             </div>
         </section>
-        <button id="back-btn" class="fixed bottom-10 left-6 lg:left-10 w-12 h-12 glass-card-no-hover rounded-2xl flex items-center justify-center text-white z-[900] hover:bg-white/10 transition group shadow-lg js-magnetic">
+        <button id="back-btn" class="fixed bottom-10 left-6 lg:left-10 w-12 h-12 bg-white border border-slate-200 rounded-2xl flex items-center justify-center text-slate-900 z-[900] hover:bg-slate-50 transition group shadow-md js-magnetic">
             <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform magnetic-child pointer-events-none"></i>
         </button>
     </div>
 
     <!-- FOOTER -->
-    <footer class="py-10 md:py-16 px-6 border-t border-white/5 bg-[#050505]">
+    <footer class="py-10 md:py-16 px-6 border-t border-slate-200 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 <div class="md:col-span-2">
-                    <h2 class="text-2xl font-black font-syne mb-3">webhurt<span class="text-blue-500">.</span></h2>
-                    <p class="text-neutral-500 text-sm leading-relaxed max-w-xs">Development & Digital Marketing Agency. Building growth-ready platforms for ambitious brands.</p>
+                    <h2 class="text-2xl font-black font-syne mb-3 text-slate-900">webhurt<span class="text-blue-600">.</span></h2>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-xs">Development & Digital Marketing Agency. Building growth-ready platforms for ambitious brands.</p>
                     <div class="flex gap-3 mt-6">
-                        <a href="https://wa.me/919058327063" target="_blank" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-neutral-400 hover:text-green-400 hover:border-green-400/30 transition"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="mailto:hello@webhurt.tech" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-neutral-400 hover:text-blue-400 hover:border-blue-400/30 transition"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-neutral-400 hover:text-sky-400 hover:border-sky-400/30 transition"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-neutral-400 hover:text-pink-400 hover:border-pink-400/30 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919058327063" target="_blank" class="w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:text-green-600 hover:border-green-300 transition shadow-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:hello@webhurt.tech" class="w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:text-blue-600 hover:border-blue-300 transition shadow-sm"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:text-sky-600 hover:border-sky-300 transition shadow-sm"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:text-pink-600 hover:border-pink-300 transition shadow-sm"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-neutral-600 mb-4">Development</p>
-                    <div class="space-y-2 text-sm text-neutral-400">
-                        <p class="hover:text-white transition cursor-pointer">Web Development</p>
-                        <p class="hover:text-white transition cursor-pointer">E-Commerce Dev</p>
-                        <p class="hover:text-white transition cursor-pointer">Software Development</p>
-                        <p class="hover:text-white transition cursor-pointer">AI Build</p>
-                        <p class="hover:text-white transition cursor-pointer">Game Development</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Development</p>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p class="hover:text-blue-600 transition cursor-pointer">Web Development</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">E-Commerce Dev</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">Software Development</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">AI Build</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">Game Development</p>
                     </div>
                 </div>
                 <div>
-                    <p class="text-[10px] font-black uppercase tracking-widest text-neutral-600 mb-4">Marketing</p>
-                    <div class="space-y-2 text-sm text-neutral-400">
-                        <p class="hover:text-white transition cursor-pointer">Google Ads</p>
-                        <p class="hover:text-white transition cursor-pointer">Meta Ads</p>
-                        <p class="hover:text-white transition cursor-pointer">SEO & Rankings</p>
-                        <p class="hover:text-white transition cursor-pointer">Email Marketing</p>
-                        <p class="hover:text-white transition cursor-pointer">Social Media</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Marketing</p>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p class="hover:text-blue-600 transition cursor-pointer">Google Ads</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">Meta Ads</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">SEO & Rankings</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">Email Marketing</p>
+                        <p class="hover:text-blue-600 transition cursor-pointer">Social Media</p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
-                <p class="text-neutral-600 text-[9px] md:text-xs font-bold uppercase tracking-widest">© 2025 webhurt Engineering. All Rights Reserved.</p>
-                <p class="text-neutral-600 text-[9px] md:text-xs font-bold uppercase tracking-widest">hello@webhurt.tech</p>
+            <div class="border-t border-slate-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-slate-500 text-[9px] md:text-xs font-bold uppercase tracking-widest">© 2025 webhurt Engineering. All Rights Reserved.</p>
+                <p class="text-slate-500 text-[9px] md:text-xs font-bold uppercase tracking-widest">hello@webhurt.tech</p>
             </div>
         </div>
     </footer>
 
     <!-- STICKY BAR -->
-    <div id="sticky-bar" class="hidden-el fixed bottom-0 left-0 w-full bg-[#050505]/95 backdrop-blur-2xl border-t border-white/10 z-[800] py-4 px-4 md:px-6 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-4 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] pb-8 md:pb-4 transition-all duration-500 translate-y-[100%]">
+    <div id="sticky-bar" class="hidden-el fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-2xl border-t border-slate-200 z-[800] py-4 px-4 md:px-6 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-4 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] pb-8 md:pb-4 transition-all duration-500 translate-y-[100%]">
         <div class="flex items-center gap-2">
             <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-            <p class="text-[10px] md:text-sm font-bold text-white">Limited Slots for Next Project!</p>
+            <p class="text-[10px] md:text-sm font-bold text-slate-900">Limited Slots for Next Project!</p>
         </div>
         <a href="#inquiry" class="bg-blue-600 text-white px-5 md:px-6 py-2 rounded-full text-[9px] md:text-xs font-black uppercase tracking-widest hover:bg-blue-700 transition shadow-lg w-full md:w-auto text-center touch-manipulation">Claim Build Setup Now</a>
     </div>
 
     <!-- EXIT MODAL -->
-    <div id="exit-modal" class="hidden-el fixed inset-0 bg-black/80 backdrop-blur-sm z-[10000] flex items-center justify-center p-4 md:p-6 transition-opacity duration-300">
-        <div class="glass-card max-w-lg w-full p-8 md:p-10 rounded-[32px] md:rounded-[40px] text-center border border-blue-500/30 relative transform transition-all duration-300 scale-95" id="exit-modal-content">
-            <button id="close-exit" class="absolute top-5 right-5 md:top-6 md:right-6 text-xl md:text-2xl text-neutral-500 hover:text-white transition"><i class="fa-solid fa-xmark pointer-events-none"></i></button>
-            <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6 text-blue-500 text-2xl md:text-3xl"><i class="fa-solid fa-gift"></i></div>
-            <h3 class="text-2xl md:text-3xl font-black font-syne mb-3 md:mb-4">Leaving Fast?</h3>
-            <p class="text-neutral-400 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">Book a swift, no-strings-attached discussion before you leave to spot critical engineering bottlenecks.</p>
+    <div id="exit-modal" class="hidden-el fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[10000] flex items-center justify-center p-4 md:p-6 transition-opacity duration-300">
+        <div class="bg-white max-w-lg w-full p-8 md:p-10 rounded-[32px] md:rounded-[40px] text-center border border-blue-500/20 relative transform transition-all duration-300 scale-95 shadow-2xl" id="exit-modal-content">
+            <button id="close-exit" class="absolute top-5 right-5 md:top-6 md:right-6 text-xl md:text-2xl text-slate-400 hover:text-slate-900 transition"><i class="fa-solid fa-xmark pointer-events-none"></i></button>
+            <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6 text-blue-600 text-2xl md:text-3xl"><i class="fa-solid fa-gift"></i></div>
+            <h3 class="text-2xl md:text-3xl font-black font-syne mb-3 md:mb-4 text-slate-900">Leaving Fast?</h3>
+            <p class="text-slate-600 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">Book a swift, no-strings-attached discussion before you leave to spot critical engineering bottlenecks.</p>
             <a href="#inquiry" id="btn-claim-exit" class="block w-full py-3 md:py-4 bg-blue-600 rounded-2xl font-black text-white text-sm md:text-lg btn-premium">Reserve Call Time</a>
-            <button id="btn-reject-exit" class="mt-4 text-[10px] md:text-xs text-neutral-500 font-bold uppercase hover:text-white transition">No thanks, I have code handled</button>
+            <button id="btn-reject-exit" class="mt-4 text-[10px] md:text-xs text-slate-500 font-bold uppercase hover:text-slate-900 transition">No thanks, I have code handled</button>
         </div>
     </div>
 
@@ -745,7 +743,7 @@
                 <i class="fa-solid fa-envelope text-white text-lg md:text-xl pointer-events-none magnetic-child"></i>
             </a>
         </div>
-        <button id="fab-btn" class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-transform duration-500 touch-manipulation js-magnetic">
+        <button id="fab-btn" class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.1)] transition-transform duration-500 touch-manipulation js-magnetic border border-slate-200">
             <i class="fa-solid fa-address-book text-[#050505] text-lg md:text-xl pointer-events-none magnetic-child"></i>
         </button>
     </div>
@@ -766,7 +764,7 @@
             { title: "Custom Web Dev", icon: "fa-solid fa-code", desc: "Tailor-made web systems built from scratch to your exact specification — zero templates.", tech:["Laravel", "Django", "Node.js"], color: "#8b5cf6", rgb: "139,92,246" },
             { title: "E-Commerce Dev", icon: "fa-solid fa-cart-shopping", desc: "Full-featured online stores with payment integration, inventory management & order flows.", tech:["Shopify", "WooCommerce", "Custom"], color: "#10b981", rgb: "16,185,129" },
             { title: "Software Dev", icon: "fa-solid fa-laptop-code", desc: "Enterprise SaaS, CRM, ERP and internal tools engineered for scale and performance.", tech:["SaaS", "CRM", "ERP"], color: "#f59e0b", rgb: "245,158,11" },
-            { title: "AI Build & Integration", icon: "fa-solid fa-robot", desc: "LLM-powered chatbots, AI automation pipelines, and custom model integrations.", tech: ["OpenAI", "LangChain", "Claude"], color: "#06b6d4", rgb: "6,182,212" },
+            { title: "AI Build & Integration", icon: "fa-solid fa-robot", desc: "LLM-powered chatbots, AI automation pipelines, and custom model integrations.", tech:["OpenAI", "LangChain", "Claude"], color: "#06b6d4", rgb: "6,182,212" },
             { title: "Game Development", icon: "fa-solid fa-gamepad", desc: "2D/3D web & mobile games, browser-based interactive experiences and game backends.", tech:["Unity", "HTML5", "Phaser"], color: "#ef4444", rgb: "239,68,68" },
             { title: "Mobile App Dev", icon: "fa-solid fa-mobile-screen-button", desc: "Cross-platform iOS & Android apps with native performance and polished UX.", tech:["React Native", "Flutter", "iOS/Android"], color: "#a855f7", rgb: "168,85,247" },
             { title: "CMS Development", icon: "fa-solid fa-layer-group", desc: "Content-driven platforms with powerful admin panels and headless CMS architecture.", tech:["WordPress", "Strapi", "Sanity"], color: "#f97316", rgb: "249,115,22" }
@@ -774,18 +772,17 @@
 
         // ── DIGITAL MARKETING SERVICES
         const MKT_SERVICES =[
-            { title: "Google Ads / PPC", icon: "fa-brands fa-google", desc: "Dominate search results with laser-targeted campaigns that convert high-intent buyers.", metrics:[{ label: "Avg CPC", val: "₹2.4" }, { label: "ROAS", val: "340%" }], color: "#ef4444", rgb: "239,68,68", tags: ["Search Ads", "Display", "Shopping"] },
+            { title: "Google Ads / PPC", icon: "fa-brands fa-google", desc: "Dominate search results with laser-targeted campaigns that convert high-intent buyers.", metrics:[{ label: "Avg CPC", val: "₹2.4" }, { label: "ROAS", val: "340%" }], color: "#ef4444", rgb: "239,68,68", tags:["Search Ads", "Display", "Shopping"] },
             { title: "Meta Ads", icon: "fa-brands fa-meta", desc: "Facebook & Instagram ad campaigns engineered with precise audience psychology and scaling strategy.", metrics:[{ label: "CTR Boost", val: "+280%" }, { label: "CAC", val: "-45%" }], color: "#3b82f6", rgb: "59,130,246", tags:["Facebook", "Instagram", "Reels"] },
             { title: "Facebook Ads", icon: "fa-brands fa-facebook", desc: "Deep retargeting funnels, lookalike audiences, and conversion-optimized creatives.", metrics:[{ label: "Conv Rate", val: "8.4%" }, { label: "ROAS", val: "5.2x" }], color: "#2563eb", rgb: "37,99,235", tags:["Retargeting", "Lookalike", "Lead Gen"] },
             { title: "Instagram Ads", icon: "fa-brands fa-instagram", desc: "Scroll-stopping visual ads, Stories, and Reels campaigns that build brand + drive sales.", metrics:[{ label: "Reach", val: "2M+" }, { label: "Eng Rate", val: "12%" }], color: "#ec4899", rgb: "236,72,153", tags:["Stories", "Reels", "Shopping"] },
-            { title: "SEO & Ranking", icon: "fa-solid fa-magnifying-glass-chart", desc: "Technical SEO, content strategy, and backlink building to rank you on Google's first page.", metrics:[{ label: "Position", val: "Top 3" }, { label: "Traffic", val: "+400%" }], color: "#10b981", rgb: "16,185,129", tags: ["On-Page", "Technical", "Local SEO"] },
+            { title: "SEO & Ranking", icon: "fa-solid fa-magnifying-glass-chart", desc: "Technical SEO, content strategy, and backlink building to rank you on Google's first page.", metrics:[{ label: "Position", val: "Top 3" }, { label: "Traffic", val: "+400%" }], color: "#10b981", rgb: "16,185,129", tags:["On-Page", "Technical", "Local SEO"] },
             { title: "Email Marketing", icon: "fa-solid fa-envelope-open-text", desc: "Automated drip campaigns, newsletters, and segmented sequences that nurture leads to buyers.", metrics:[{ label: "Open Rate", val: "42%" }, { label: "Conv", val: "6.8%" }], color: "#f59e0b", rgb: "245,158,11", tags:["Drip", "Automation", "Newsletter"] },
-            { title: "Content Marketing", icon: "fa-solid fa-pen-nib", desc: "SEO-powered blogs, video scripts, social content, and brand storytelling that attracts traffic.", metrics:[{ label: "Organic", val: "+550%" }, { label: "DA Boost", val: "+35" }], color: "#a855f7", rgb: "168,85,247", tags: ["Blog", "Video", "Infographic"] },
+            { title: "Content Marketing", icon: "fa-solid fa-pen-nib", desc: "SEO-powered blogs, video scripts, social content, and brand storytelling that attracts traffic.", metrics:[{ label: "Organic", val: "+550%" }, { label: "DA Boost", val: "+35" }], color: "#a855f7", rgb: "168,85,247", tags:["Blog", "Video", "Infographic"] },
             { title: "Social Media Mgmt", icon: "fa-solid fa-share-nodes", desc: "Full-service social presence management across all platforms with consistent brand voice.", metrics:[{ label: "Followers", val: "10K+" }, { label: "Eng Rate", val: "15%" }], color: "#06b6d4", rgb: "6,182,212", tags:["Posting", "Strategy", "Analytics"] }
         ];
 
         // ── RECENT WORKS / PORTFOLIO
-        // Updated metrics/descriptions: Kept them extremely realistic for a startup and entirely generic images.
         const CASE_STUDIES_DATA =[
             { title: "Custom E-Commerce Build", result: "300+ Orders in Month 1", desc: "Built a lightweight, conversion-optimized storefront for a growing D2C apparel startup. Clean UI, safe gateway, and smooth checkout experience.", img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80", tag: "E-Commerce" },
             { title: "Google/Meta Ads Setup", result: "2.1x Consistent ROAS", desc: "Targeted ad structures optimized for a local service business. Efficient creatives delivering high-intent daily inbound leads on limited spending.", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", tag: "Performance Ads" },
@@ -848,13 +845,13 @@
         //  RENDER: PROCESS
         // ══════════════════════════════
         document.getElementById('process-grid').innerHTML = PROCESS_LIST.map((s, i) => `
-            <div class="glass-card-no-hover p-8 rounded-[32px] text-center relative group reveal-element">
-                <div class="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-blue-500 text-2xl mx-auto mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-500">
+            <div class="bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-center relative group reveal-element shadow-sm">
+                <div class="w-16 h-16 bg-white border border-slate-200 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mx-auto mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition duration-500 shadow-sm">
                     <i class="fa-solid ${s.icon}"></i>
                 </div>
-                <h3 class="text-xl md:text-2xl font-black font-syne mb-3 text-white">${s.title}</h3>
-                <p class="text-neutral-400 text-sm leading-relaxed">${s.desc}</p>
-                ${i < 3 ? '<div class="hidden lg:block absolute top-16 -right-5 w-10 border-t-2 border-dashed border-white/20"></div>' : ''}
+                <h3 class="text-xl md:text-2xl font-black font-syne mb-3 text-slate-900">${s.title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">${s.desc}</p>
+                ${i < 3 ? '<div class="hidden lg:block absolute top-16 -right-5 w-10 border-t-2 border-dashed border-slate-300"></div>' : ''}
             </div>
         `).join('');
 
@@ -863,13 +860,13 @@
         // ══════════════════════════════
         document.getElementById('dev-grid').innerHTML = DEV_SERVICES.map(s => `
             <div class="dev-card shine-card reveal-element" style="--card-color:${s.color};--card-rgb:${s.rgb}">
-                <div class="card-icon" style="background:rgba(${s.rgb},0.12);border-color:rgba(${s.rgb},0.2);color:${s.color}">
+                <div class="card-icon shadow-sm" style="background:rgba(${s.rgb},0.08);border-color:rgba(${s.rgb},0.2);color:${s.color}">
                     <i class="${s.icon}"></i>
                 </div>
-                <h3 class="text-lg font-black font-syne text-white mb-2 leading-tight">${s.title}</h3>
-                <p class="text-neutral-500 text-sm leading-relaxed mb-4">${s.desc}</p>
+                <h3 class="text-lg font-black font-syne text-slate-900 mb-2 leading-tight">${s.title}</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">${s.desc}</p>
                 <div class="flex flex-wrap gap-1 mb-5">
-                    ${s.tech.map(t => `<span class="tech-tag text-neutral-400">${t}</span>`).join('')}
+                    ${s.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                 </div>
                 <a href="#inquiry" class="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest nav-link" style="color:${s.color}">
                     Get Quote <i class="fa-solid fa-arrow-right text-[9px]"></i>
@@ -885,7 +882,7 @@
             'All': MKT_SERVICES,
             'Paid Ads': MKT_SERVICES.filter((_, i) => i < 4),
             'Organic': MKT_SERVICES.filter((_, i) => i >= 4 && i < 7),
-            'Social': [MKT_SERVICES[1], MKT_SERVICES[2], MKT_SERVICES[3], MKT_SERVICES[7]]
+            'Social':[MKT_SERVICES[1], MKT_SERVICES[2], MKT_SERVICES[3], MKT_SERVICES[7]]
         };
 
         const tabsContainer = document.getElementById('mkt-tabs');
@@ -897,22 +894,22 @@
             document.getElementById('mkt-grid').innerHTML = items.map(s => `
                 <div class="mkt-card shine-card" style="--mkt-color:${s.color};--mkt-rgb:${s.rgb}">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl flex-shrink-0" style="background:rgba(${s.rgb},0.12);color:${s.color}">
+                        <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 shadow-sm" style="background:rgba(${s.rgb},0.08);color:${s.color}">
                             <i class="${s.icon}"></i>
                         </div>
-                        <h3 class="text-base font-black font-syne text-white leading-tight">${s.title}</h3>
+                        <h3 class="text-base font-black font-syne text-slate-900 leading-tight">${s.title}</h3>
                     </div>
-                    <p class="text-neutral-500 text-sm leading-relaxed mb-4">${s.desc}</p>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4">${s.desc}</p>
                     <div class="grid grid-cols-2 gap-2 mb-4">
                         ${s.metrics.map(m => `
                             <div class="mkt-metric">
-                                <p class="text-white font-black text-sm">${m.val}</p>
-                                <p class="text-neutral-600 text-[9px] uppercase tracking-wider">${m.label}</p>
+                                <p class="text-slate-900 font-black text-sm">${m.val}</p>
+                                <p class="text-slate-500 text-[9px] uppercase tracking-wider">${m.label}</p>
                             </div>
                         `).join('')}
                     </div>
                     <div class="flex flex-wrap gap-1 mb-4">
-                        ${s.tags.map(t => `<span class="tech-tag text-neutral-500" style="--card-rgb:${s.rgb}">${t}</span>`).join('')}
+                        ${s.tags.map(t => `<span class="tech-tag" style="--card-rgb:${s.rgb}">${t}</span>`).join('')}
                     </div>
                     <a href="#inquiry" class="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest nav-link" style="color:${s.color}">
                         Start Campaign <i class="fa-solid fa-arrow-right text-[9px]"></i>
@@ -934,17 +931,17 @@
         //  RENDER: RECENT WORKS (PORTFOLIO)
         // ══════════════════════════════
         document.getElementById('cases-grid').innerHTML = CASE_STUDIES_DATA.map((c) => `
-            <div class="glass-card rounded-[32px] md:rounded-[40px] overflow-hidden group reveal-element shine-card flex flex-col h-full">
-                <div class="h-56 md:h-64 overflow-hidden relative border-b border-white/5">
+            <div class="bg-white border border-slate-200 shadow-sm rounded-[32px] md:rounded-[40px] overflow-hidden group reveal-element shine-card flex flex-col h-full">
+                <div class="h-56 md:h-64 overflow-hidden relative border-b border-slate-200">
                     <img src="${c.img}" loading="lazy" alt="${c.title}" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-110 transition duration-1000 object-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10"></div>
                     <div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-600/90 backdrop-blur-md rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-widest text-white z-20 shadow-lg">${c.tag}</div>
                 </div>
                 <div class="p-8 md:p-10 flex-grow flex flex-col">
-                    <div class="mb-4 inline-block text-green-400 font-bold text-xs bg-green-400/10 px-3 py-1 rounded-full w-fit"><i class="fa-solid fa-chart-line mr-1"></i> Result: ${c.result}</div>
-                    <h3 class="text-2xl md:text-3xl font-black mb-3 md:mb-4 font-syne text-white leading-tight">${c.title}</h3>
-                    <p class="text-neutral-400 text-sm md:text-base mb-6 md:mb-8 leading-relaxed flex-grow">${c.desc}</p>
-                    <a href="#inquiry" class="inline-flex items-center gap-3 text-blue-500 font-black text-xs uppercase tracking-widest group/btn bg-blue-600/10 px-5 py-3 rounded-full hover:bg-blue-600 hover:text-white transition nav-link w-fit">Discuss Project <i class="fa-solid fa-arrow-right transition-transform"></i></a>
+                    <div class="mb-4 inline-block text-green-600 font-bold text-xs bg-green-50 border border-green-100 px-3 py-1 rounded-full w-fit"><i class="fa-solid fa-chart-line mr-1"></i> Result: ${c.result}</div>
+                    <h3 class="text-2xl md:text-3xl font-black mb-3 md:mb-4 font-syne text-slate-900 leading-tight">${c.title}</h3>
+                    <p class="text-slate-600 text-sm md:text-base mb-6 md:mb-8 leading-relaxed flex-grow">${c.desc}</p>
+                    <a href="#inquiry" class="inline-flex items-center gap-3 text-blue-600 font-black text-xs uppercase tracking-widest group/btn bg-blue-50 border border-blue-100 px-5 py-3 rounded-full hover:bg-blue-600 hover:text-white transition nav-link w-fit">Discuss Project <i class="fa-solid fa-arrow-right transition-transform"></i></a>
                 </div>
             </div>
         `).join('');
@@ -953,17 +950,17 @@
         //  RENDER: TESTIMONIALS
         // ══════════════════════════════
         document.getElementById('testimonials-grid').innerHTML = TESTIMONIALS_DATA.map((t) => `
-            <div class="glass-card-no-hover p-8 md:p-10 rounded-[32px] md:rounded-[40px] relative text-white reveal-element">
+            <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] relative text-slate-900 reveal-element">
                 <i class="fa-solid fa-quote-right absolute top-8 right-8 text-3xl md:text-4xl text-blue-600/10"></i>
-                <div class="flex gap-1 mb-6 md:mb-8 text-amber-500 text-sm drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]">
+                <div class="flex gap-1 mb-6 md:mb-8 text-amber-500 text-sm">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
-                <p class="text-base md:text-lg mb-8 md:mb-10 leading-relaxed text-neutral-300 font-medium">"${t.text}"</p>
+                <p class="text-base md:text-lg mb-8 md:mb-10 leading-relaxed text-slate-700 font-medium">"${t.text}"</p>
                 <div class="flex items-center gap-4 md:gap-5 mt-auto">
-                    <img src="${t.img}" alt="${t.name}" loading="lazy" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-500/30">
+                    <img src="${t.img}" alt="${t.name}" loading="lazy" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
                     <div>
                         <h4 class="font-black text-base md:text-lg font-syne">${t.name}</h4>
-                        <p class="text-[9px] md:text-[10px] font-black text-blue-500 uppercase tracking-widest mt-1">${t.role}</p>
+                        <p class="text-[9px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">${t.role}</p>
                     </div>
                 </div>
             </div>
@@ -973,15 +970,15 @@
         //  RENDER: TEAM
         // ══════════════════════════════
         document.getElementById('team-grid').innerHTML = TEAM_DATA.map((t) => `
-            <div class="glass-card rounded-[32px] md:rounded-[40px] overflow-hidden group flex flex-col reveal-element">
+            <div class="bg-slate-50 border border-slate-200 shadow-sm rounded-[32px] md:rounded-[40px] overflow-hidden group flex flex-col reveal-element">
                 <div class="h-72 md:h-80 overflow-hidden relative">
                     <img src="${t.img}" alt="${t.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" class="w-full h-full object-cover relative z-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent z-10 opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-90"></div>
                 </div>
-                <div class="p-6 md:p-8 text-center relative z-20 flex-grow flex flex-col items-center justify-center -mt-16 bg-[#050505]/90 backdrop-blur-xl mx-4 md:mx-6 rounded-2xl border border-white/10 mb-6 shadow-2xl text-white">
-                    <h3 class="text-xl md:text-2xl font-black mb-1 font-syne group-hover:text-blue-400 transition-colors">${t.name}</h3>
-                    <p class="text-blue-500 font-black text-[9px] md:text-[10px] uppercase tracking-widest mb-3 md:mb-4">${t.role}</p>
-                    <p class="text-xs md:text-sm text-neutral-400 leading-relaxed px-2">${t.desc}</p>
+                <div class="p-6 md:p-8 text-center relative z-20 flex-grow flex flex-col items-center justify-center -mt-16 bg-white/95 backdrop-blur-xl mx-4 md:mx-6 rounded-2xl border border-slate-200 mb-6 shadow-lg text-slate-900">
+                    <h3 class="text-xl md:text-2xl font-black mb-1 font-syne group-hover:text-blue-600 transition-colors">${t.name}</h3>
+                    <p class="text-blue-600 font-black text-[9px] md:text-[10px] uppercase tracking-widest mb-3 md:mb-4">${t.role}</p>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed px-2">${t.desc}</p>
                 </div>
             </div>
         `).join('');
@@ -991,13 +988,13 @@
         // ══════════════════════════════
         document.getElementById('stats-grid').innerHTML = STATS_LIST.map(s => `
             <div class="text-center group reveal-element">
-                <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-600/10 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-blue-600/20 transition text-blue-500 text-xl md:text-2xl">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-50 border border-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-blue-100 transition text-blue-600 text-xl md:text-2xl shadow-sm">
                     <i class="fa-solid ${s.icon}"></i>
                 </div>
-                <div class="text-3xl md:text-5xl font-black mb-2 font-syne tracking-tighter text-white stat-glow">
+                <div class="text-3xl md:text-5xl font-black mb-2 font-syne tracking-tighter text-slate-900 stat-glow">
                     <span class="num-counter" data-count="${s.val}">0</span>${s.isPercent ? '%' : '+'}
                 </div>
-                <div class="text-[9px] md:text-[10px] font-black text-neutral-500 uppercase tracking-widest px-2">${s.label}</div>
+                <div class="text-[9px] md:text-[10px] font-black text-slate-500 uppercase tracking-widest px-2">${s.label}</div>
             </div>
         `).join('');
 
@@ -1007,31 +1004,31 @@
         const mBrandBase =["React JS", "Node Arch.", "Shopify Engine", "AI Prompting", "Next Generation UI", "Secure Stacks", "Flutter Dev", "MongoDB", "AWS Cloud", "TypeScript"];
         const extended =[...mBrandBase, ...mBrandBase, ...mBrandBase, ...mBrandBase];
         document.getElementById('marquee-box').innerHTML = `<div class="marquee-content gap-16 items-center px-8">` +
-            extended.map(b => `<div class="text-xl font-bold font-syne text-neutral-600 hover:text-white transition whitespace-nowrap">${b}</div>`).join('') + `</div>`;
+            extended.map(b => `<div class="text-xl font-bold font-syne text-slate-400 hover:text-blue-600 transition whitespace-nowrap">${b}</div>`).join('') + `</div>`;
 
         // ══════════════════════════════
         //  RENDER: PRICING 
         // ══════════════════════════════
-        document.getElementById('pricing-grid').className = "grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-white relative";
+        document.getElementById('pricing-grid').className = "grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-slate-900 relative";
         document.getElementById('pricing-grid').innerHTML = PRICING_PLANS.map((p) => `
-            <div class="glass-card p-8 md:p-10 rounded-[32px] relative flex flex-col ${p.popular ? 'border-blue-600/50 shadow-[0_0_40px_rgba(37,99,235,0.15)] md:-translate-y-4 scale-[1.02]' : ''} reveal-element">
+            <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px] relative flex flex-col ${p.popular ? 'border-blue-500 shadow-[0_0_40px_rgba(37,99,235,0.15)] md:-translate-y-4 scale-[1.02]' : ''} reveal-element">
                 ${p.popular ? '<div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-blue-600 rounded-full text-[9px] font-black uppercase text-white shadow-lg whitespace-nowrap"><i class="fa-solid fa-crown mr-1"></i> TOP RATED CHOSEN</div>' : ''}
-                <h3 class="text-xl md:text-2xl font-black mb-3 font-syne text-white">${p.name}</h3>
+                <h3 class="text-xl md:text-2xl font-black mb-3 font-syne text-slate-900">${p.name}</h3>
                 <div class="mb-5">
-                    <p class="text-neutral-500 text-[9px] font-black uppercase tracking-widest mb-1">At Starting Price</p>
-                    <div class="text-2xl font-black font-syne">${p.inr}</div>
-                    ${p.sub ? '<div class="text-[11px] md:text-xs text-blue-400 font-bold mt-1">' + p.sub + '</div>' : ''}
+                    <p class="text-slate-500 text-[9px] font-black uppercase tracking-widest mb-1">At Starting Price</p>
+                    <div class="text-2xl font-black font-syne text-slate-900">${p.inr}</div>
+                    ${p.sub ? '<div class="text-[11px] md:text-xs text-blue-600 font-bold mt-1">' + p.sub + '</div>' : ''}
                 </div>
-                <p class="text-neutral-400 text-sm mb-6 leading-relaxed">${p.desc}</p>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">${p.desc}</p>
                 <div class="space-y-3 mb-10 flex-grow">
                     ${p.features.map(f => `
-                        <div class="flex items-start md:items-center gap-2 text-xs font-bold text-neutral-300">
+                        <div class="flex items-start md:items-center gap-2 text-xs font-bold text-slate-700">
                             <i class="fa-solid fa-circle-check text-blue-500 text-sm flex-shrink-0"></i> <span class="flex-1">${f}</span>
                         </div>
                     `).join('')}
                 </div>
-                ${p.popular ? '<div class="text-center mb-3 text-[9px] text-red-400 font-black uppercase tracking-widest animate-pulse"><i class="fa-solid fa-hourglass-half mr-1"></i> Limited Slots</div>' : ''}
-                <a href="#inquiry" class="w-full py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-center transition nav-link ${p.popular ? 'bg-blue-600 text-white btn-premium' : 'bg-white/5 hover:bg-white/10 text-white'}">Choose Model</a>
+                ${p.popular ? '<div class="text-center mb-3 text-[9px] text-red-500 font-black uppercase tracking-widest animate-pulse"><i class="fa-solid fa-hourglass-half mr-1"></i> Limited Slots</div>' : ''}
+                <a href="#inquiry" class="w-full py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest text-center transition nav-link ${p.popular ? 'bg-blue-600 text-white btn-premium' : 'bg-slate-100 hover:bg-slate-200 text-slate-900'}">Choose Model</a>
             </div>
         `).join('');
 
@@ -1039,13 +1036,13 @@
         //  RENDER: FAQs
         // ══════════════════════════════
         document.getElementById('faqs-grid').innerHTML = FAQS_LIST.map((f) => `
-            <div class="glass-card-no-hover mb-4 rounded-2xl overflow-hidden cursor-pointer bg-white/[0.03] faq-card reveal-element">
-                <div class="p-6 flex justify-between items-center text-white">
+            <div class="bg-white shadow-sm mb-4 rounded-2xl overflow-hidden cursor-pointer border border-slate-200 faq-card reveal-element">
+                <div class="p-6 flex justify-between items-center text-slate-900">
                     <h3 class="font-bold font-syne text-lg md:text-xl pr-4">${f.q}</h3>
-                    <i class="fa-solid fa-chevron-down text-blue-500 transition-transform duration-300 faq-icon flex-shrink-0"></i>
+                    <i class="fa-solid fa-chevron-down text-blue-600 transition-transform duration-300 faq-icon flex-shrink-0"></i>
                 </div>
-                <div class="px-6 pb-0 text-neutral-400 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out faq-body">
-                    <p class="leading-relaxed border-t border-white/10 pt-4 pb-6">${f.a}</p>
+                <div class="px-6 pb-0 text-slate-600 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out faq-body">
+                    <p class="leading-relaxed border-t border-slate-100 pt-4 pb-6">${f.a}</p>
                 </div>
             </div>
         `).join('');
@@ -1155,8 +1152,8 @@
         window.addEventListener('scroll', () => {
             // Navbar scroll effect
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('bg-[#050505]/80', 'backdrop-blur-xl', 'border-white/5');
-            else nav.classList.remove('bg-[#050505]/80', 'backdrop-blur-xl', 'border-white/5');
+            if (window.scrollY > 50) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+            else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
 
             // Sticky bar
             const sbar = document.getElementById('sticky-bar');
@@ -1170,8 +1167,8 @@
                 if (!sec) return;
                 const rect = sec.getBoundingClientRect();
                 const links = document.querySelectorAll(`a[href="#${id}"]`);
-                if (rect.top <= 120 && rect.bottom >= 120) links.forEach(l => l.classList.add('text-blue-500'));
-                else links.forEach(l => l.classList.remove('text-blue-500'));
+                if (rect.top <= 120 && rect.bottom >= 120) links.forEach(l => l.classList.add('text-blue-600'));
+                else links.forEach(l => l.classList.remove('text-blue-600'));
             });
         });
 
@@ -1253,7 +1250,7 @@
         //  FAB BUTTON
         // ══════════════════════════════
         document.getElementById('fab-btn').addEventListener('click', function () {
-            this.classList.toggle('rotate-45'); this.classList.toggle('bg-neutral-200');
+            this.classList.toggle('rotate-45'); this.classList.toggle('bg-slate-100');
             const mn = document.getElementById('fab-menu');
             if (mn.classList.contains('hidden-el')) {
                 mn.classList.remove('hidden-el'); setTimeout(() => { mn.classList.remove('translate-y-4', 'opacity-0'); }, 20);
