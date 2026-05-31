@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -38,12 +39,23 @@
       "logo": "https://webhurt.tech/fav.png","description": "Development & Digital Marketing Agency.","telephone": "+919058327063","email": "webhurt02@gmail.com",
       "address": { "@type": "PostalAddress", "addressCountry": "IN" },"priceRange": "$$$"
     }]</script>
+
+    <!-- PERFORMANCE RESOURCE HINTS ADDED HERE -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- ADDED defer TO NON-CRITICAL CONFETTI SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -56,6 +68,10 @@
         }
     </script>
     <style>
+        /* ── PERFORMANCE ENHANCEMENTS ADDED ── */
+        .reveal-element { will-change: opacity, transform; }
+        img { content-visibility: auto; }
+        
         :root { --font-sans: "Inter", sans-serif; --font-syne: "Space Grotesk", sans-serif; --blue: #2563eb; --blue-glow: rgba(37,99,235,0.3); }
         body { background-color: #f8fafc; color: #0f172a; font-family: var(--font-sans); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
 
@@ -280,9 +296,9 @@
                 <!-- Badge -->
                 <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-sm backdrop-blur-md reveal-element delay-100">
                     <div class="flex -space-x-2 mr-2">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Client 1" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Client 2" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client 3" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Client 1" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Client 2" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy" decoding="async">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client 3" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy" decoding="async">
                     </div>
                     <div class="relative">
                         <span class="w-2 h-2 bg-blue-500 rounded-full inline-block mr-1"></span>
@@ -587,7 +603,7 @@
                     <div class="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 blur-[120px] pointer-events-none hidden md:block"></div>
                     <div class="grid md:grid-cols-2 items-center">
                         <div class="h-[300px] md:h-[600px] relative">
-                            <img src="ceo.jpg" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'" alt="CEO webhurt" class="w-full h-full object-cover">
+                            <img src="ceo.jpg" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'" alt="CEO webhurt" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900/80 to-transparent"></div>
                             <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10">
                                 <h3 class="text-2xl md:text-3xl font-black font-syne text-white mb-1">Aayan Siddiqui</h3>
@@ -599,7 +615,7 @@
                             <h2 class="text-xl md:text-3xl font-black font-syne text-slate-900 mb-4 md:mb-6 leading-tight">"A solid idea needs equally solid code to survive the digital market."</h2>
                             <p class="text-slate-600 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">As a rapidly growing agency, webhurt is built on an Agile foundation. We engineer clean systems from scratch that allow absolute custom features, robust architecture, and genuine Search Engine clarity. It's about crafting the best tech iteration of your ideas.</p>
                             <div class="mt-4 md:mt-8">
-                                <img src="sign.jpg" alt="Aayan Siddiqui Signature" class="w-40 md:w-56 h-auto opacity-80 contrast-125 mix-blend-multiply" loading="lazy">
+                                <img src="sign.jpg" loading="lazy" decoding="async" alt="Aayan Siddiqui Signature" class="w-40 md:w-56 h-auto opacity-80 contrast-125 mix-blend-multiply">
                             </div>
                         </div>
                     </div>
@@ -645,7 +661,7 @@
                         <h3 class="text-xl md:text-2xl font-black font-syne text-slate-900 mb-3 md:mb-4">Direct Touchpoint</h3>
                         <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8">Our operational managers ensure you connect fast for any queries or active implementations.</p>
                         <div class="space-y-4">
-                            <a href="tel:+919411283572" class="flex items-center gap-4 text-slate-900 hover:text-blue-600 transition-colors">
+                            <a href="tel:+91" class="flex items-center gap-4 text-slate-900 hover:text-blue-600 transition-colors">
                                 <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center"><i class="fa-solid fa-phone"></i></div>
                                 <span class="font-black text-base md:text-lg">+91 94112 83572</span>
                             </a>
@@ -729,7 +745,7 @@
     <!-- FLOATING CONTACT -->
     <div class="fixed bottom-28 md:bottom-24 right-4 md:right-10 z-[900] flex flex-col items-end gap-3 md:gap-4">
         <div id="fab-menu" class="flex flex-col gap-3 mb-2 hidden-el transition-all duration-300 transform translate-y-4 opacity-0 origin-bottom">
-            <a href="tel:+919411283572" class="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-110 transition-transform js-magnetic">
+            <a href="tel:+91" class="w-10 h-10 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-110 transition-transform js-magnetic">
                 <i class="fa-solid fa-phone text-white text-lg md:text-xl pointer-events-none magnetic-child"></i>
             </a>
             <a href="https://wa.me/919058327063" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform js-magnetic">
@@ -964,7 +980,7 @@
         renderMktCards(MKT_SERVICES);
 
         // ══════════════════════════════
-        //  RENDER: RECENT WORKS (PORTFOLIO)
+        //  RENDER: RECENT WORKS (PORTFOLIO) - Added async decoding
         // ══════════════════════════════
         document.getElementById('cases-grid').innerHTML = CASE_STUDIES_DATA.map((c) => `
             <div class="bg-white border border-slate-200 shadow-sm rounded-[32px] md:rounded-[40px] overflow-hidden group reveal-element shine-card flex flex-col h-full">
@@ -991,14 +1007,14 @@
                                     dots[i].className = i===idx ? 'w-2 h-2 rounded-full bg-white shadow-md transition-all' : 'w-1.5 h-1.5 rounded-full bg-white/50 shadow-sm transition-all';
                                 }
                             ">
-                                ${c.imgArray.map(imgSrc => `<img src="${imgSrc}" loading="lazy" alt="${c.title}" onerror="this.style.display='none'" class="w-full h-full flex-shrink-0 snap-center object-cover opacity-90 object-center">`).join('')}
+                                ${c.imgArray.map(imgSrc => `<img src="${imgSrc}" loading="lazy" decoding="async" alt="${c.title}" onerror="this.style.display='none'" class="w-full h-full flex-shrink-0 snap-center object-cover opacity-90 object-center">`).join('')}
                             </div>
                             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-30 pointer-events-none">
                                 ${c.imgArray.map((_, i) => `<span class="${i===0 ? 'w-2 h-2 rounded-full bg-white shadow-md' : 'w-1.5 h-1.5 rounded-full bg-white/50 shadow-sm'} transition-all"></span>`).join('')}
                             </div>
                         </div>
                     ` : `
-                        <img src="${c.img}" loading="lazy" alt="${c.title}" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-110 transition duration-1000 object-center">
+                        <img src="${c.img}" loading="lazy" decoding="async" alt="${c.title}" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover relative z-10 opacity-90 group-hover:scale-110 transition duration-1000 object-center">
                     `}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-20 pointer-events-none"></div>
                     <div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-600/90 backdrop-blur-md rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-widest text-white z-30 shadow-lg ${c.imgArray ? 'hidden' : ''}">${c.tag}</div>
@@ -1013,7 +1029,7 @@
         `).join('');
 
         // ══════════════════════════════
-        //  RENDER: TESTIMONIALS
+        //  RENDER: TESTIMONIALS - Added async decoding
         // ══════════════════════════════
         document.getElementById('testimonials-grid').innerHTML = TESTIMONIALS_DATA.map((t) => `
             <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] relative text-slate-900 reveal-element">
@@ -1023,7 +1039,7 @@
                 </div>
                 <p class="text-base md:text-lg mb-8 md:mb-10 leading-relaxed text-slate-700 font-medium">"${t.text}"</p>
                 <div class="flex items-center gap-4 md:gap-5 mt-auto">
-                    <img src="${t.img}" alt="${t.name}" loading="lazy" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
+                    <img src="${t.img}" alt="${t.name}" loading="lazy" decoding="async" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
                     <div>
                         <h4 class="font-black text-base md:text-lg font-syne">${t.name}</h4>
                         <p class="text-[9px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">${t.role}</p>
@@ -1033,12 +1049,12 @@
         `).join('');
 
         // ══════════════════════════════
-        //  RENDER: TEAM
+        //  RENDER: TEAM - Added async decoding
         // ══════════════════════════════
         document.getElementById('team-grid').innerHTML = TEAM_DATA.map((t) => `
             <div class="bg-slate-50 border border-slate-200 shadow-sm rounded-[32px] md:rounded-[40px] overflow-hidden group flex flex-col reveal-element">
                 <div class="h-72 md:h-80 overflow-hidden relative">
-                    <img src="${t.img}" alt="${t.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" class="w-full h-full object-cover relative z-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                    <img src="${t.img}" alt="${t.name}" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" class="w-full h-full object-cover relative z-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-90"></div>
                 </div>
                 <div class="p-6 md:p-8 text-center relative z-20 flex-grow flex flex-col items-center justify-center -mt-16 bg-white/95 backdrop-blur-xl mx-4 md:mx-6 rounded-2xl border border-slate-200 mb-6 shadow-lg text-slate-900">
@@ -1130,7 +1146,7 @@
         });
 
         // ══════════════════════════════
-        //  HERO PARTICLE CANVAS
+        //  HERO PARTICLE CANVAS (Optimized to pause when not visible)
         // ══════════════════════════════
         const canvas = document.getElementById('hero-canvas');
         const ctx = canvas.getContext('2d');
@@ -1188,10 +1204,17 @@
             }
         }
 
+        // Added Performance Fix: Pause animation when hero is off-screen
+        let isHeroCanvasVisible = true;
+        const heroObserver = new IntersectionObserver(entries => { isHeroCanvasVisible = entries[0].isIntersecting; });
+        heroObserver.observe(document.getElementById('home'));
+
         function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            connectParticles();
+            if(isHeroCanvasVisible) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                connectParticles();
+            }
             animId = requestAnimationFrame(animateParticles);
         }
         animateParticles();
@@ -1213,29 +1236,37 @@
         setTimeout(typeLoop, 1200);
 
         // ══════════════════════════════
-        //  WINDOW SCROLL EFFECTS
+        //  WINDOW SCROLL EFFECTS (Throttled for Performance)
         // ══════════════════════════════
+        let isScrolling = false;
         window.addEventListener('scroll', () => {
-            // Navbar scroll effect
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
-            else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    // Navbar scroll effect
+                    const nav = document.getElementById('navbar');
+                    if (window.scrollY > 50) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+                    else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
 
-            // Sticky bar
-            const sbar = document.getElementById('sticky-bar');
-            if (window.scrollY > 800) { sbar.classList.remove('hidden-el', 'translate-y-[100%]'); sbar.classList.add('visible-el', 'translate-y-0'); }
-            else { sbar.classList.add('hidden-el', 'translate-y-[100%]'); sbar.classList.remove('visible-el', 'translate-y-0'); }
+                    // Sticky bar
+                    const sbar = document.getElementById('sticky-bar');
+                    if (window.scrollY > 800) { sbar.classList.remove('hidden-el', 'translate-y-[100%]'); sbar.classList.add('visible-el', 'translate-y-0'); }
+                    else { sbar.classList.add('hidden-el', 'translate-y-[100%]'); sbar.classList.remove('visible-el', 'translate-y-0'); }
 
-            // Active nav highlight
-            const sections =['home', 'development', 'digital-marketing', 'process', 'recent-works', 'pricing'];
-            sections.forEach(id => {
-                const sec = document.getElementById(id);
-                if (!sec) return;
-                const rect = sec.getBoundingClientRect();
-                const links = document.querySelectorAll(`a[href="#${id}"]`);
-                if (rect.top <= 120 && rect.bottom >= 120) links.forEach(l => l.classList.add('text-blue-600'));
-                else links.forEach(l => l.classList.remove('text-blue-600'));
-            });
+                    // Active nav highlight
+                    const sections =['home', 'development', 'digital-marketing', 'process', 'recent-works', 'pricing'];
+                    sections.forEach(id => {
+                        const sec = document.getElementById(id);
+                        if (!sec) return;
+                        const rect = sec.getBoundingClientRect();
+                        const links = document.querySelectorAll(`a[href="#${id}"]`);
+                        if (rect.top <= 120 && rect.bottom >= 120) links.forEach(l => l.classList.add('text-blue-600'));
+                        else links.forEach(l => l.classList.remove('text-blue-600'));
+                    });
+                    
+                    isScrolling = false;
+                });
+                isScrolling = true;
+            }
         });
 
         // ══════════════════════════════
