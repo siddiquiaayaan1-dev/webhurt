@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -15,7 +17,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://webhurt.tech/" />
     
-    <!-- Favicon Fixed (Now targeting fav.png properly) -->
+    <!-- Favicon Fixed -->
     <link rel="icon" type="image/png" href="fav.png">
     <link rel="shortcut icon" href="fav.png" type="image/png">
     <link rel="apple-touch-icon" href="fav.png">
@@ -37,7 +39,7 @@
       "address": { "@type": "PostalAddress", "addressCountry": "IN" },"priceRange": "$$$"
     }]</script>
 
-    <!-- PERFORMANCE RESOURCE HINTS ADDED HERE -->
+    <!-- PERFORMANCE RESOURCE HINTS -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://images.unsplash.com">
@@ -51,7 +53,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- ADDED defer TO NON-CRITICAL CONFETTI SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
     <script>
         tailwind.config = {
@@ -65,14 +66,14 @@
         }
     </script>
     <style>
-        /* ── PERFORMANCE ENHANCEMENTS ADDED ── */
+        /* ── PERFORMANCE ENHANCEMENTS ── */
         .reveal-element { will-change: opacity, transform; }
         img { content-visibility: auto; }
         
         :root { --font-sans: "Inter", sans-serif; --font-syne: "Space Grotesk", sans-serif; --blue: #2563eb; --blue-glow: rgba(37,99,235,0.3); }
         body { background-color: #f8fafc; color: #0f172a; font-family: var(--font-sans); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
 
-        /* ── GLASS CARDS (Light Theme Adjustments) ── */
+        /* ── GLASS CARDS ── */
         .glass-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(24px); border: 1px solid rgba(0,0,0,0.05); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 30px rgba(0,0,0,0.03); }
         .glass-card:hover { background: rgba(255,255,255,1); border-color: rgba(59,130,246,0.3); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 30px rgba(59,130,246,0.1); }
         .glass-card-no-hover { background: rgba(255,255,255,0.8); backdrop-filter: blur(24px); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 30px rgba(0,0,0,0.03); }
@@ -96,7 +97,7 @@
         .reveal-element { opacity:0; transform:translateY(30px) scale(0.98); transition:opacity 0.8s ease, transform 0.8s ease; }
         .reveal-element.is-visible { opacity:1; transform:translateY(0) scale(1); }
 
-        /* ── SCROLLBAR (Light Theme) ── */
+        /* ── SCROLLBAR ── */
         ::-webkit-scrollbar { width:6px; }
         ::-webkit-scrollbar-track { background:#f8fafc; }
         ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:10px; }
@@ -123,7 +124,7 @@
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
         /* ══════════════════════════════════════════
-           HERO GRID BACKGROUND (Light Theme)
+           HERO GRID BACKGROUND 
         ══════════════════════════════════════════ */
         .hero-grid-bg {
             background-image: linear-gradient(rgba(37,99,235,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(37,99,235,0.06) 1px,transparent 1px);
@@ -139,10 +140,10 @@
         @keyframes floatY { 0%,100%{transform:translateY(0px) rotate(-2deg)} 50%{transform:translateY(-12px) rotate(2deg)} }
 
         /* ══════════════════════════════════════════
-           DEVELOPMENT SECTION CARDS (Light Theme) - Resized to fit better
+           DEVELOPMENT SECTION CARDS (Fixed Pointer Events)
         ══════════════════════════════════════════ */
         .dev-card { position:relative; background:rgba(255,255,255,0.9); border:1px solid rgba(0,0,0,0.05); border-radius:24px; padding:1.5rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
-        .dev-card::before { content:''; position:absolute; inset:0; opacity:0; transition:opacity 0.5s ease; border-radius:24px; }
+        .dev-card::before { content:''; position:absolute; inset:0; opacity:0; transition:opacity 0.5s ease; border-radius:24px; pointer-events:none; } /* FIXED CLICK ISSUE HERE */
         .dev-card:hover { transform:translateY(-10px); border-color:var(--card-color,#3b82f6); box-shadow:0 25px 50px rgba(0,0,0,0.08), 0 0 40px rgba(var(--card-rgb,37,99,235),0.15); }
         .dev-card:hover::before { opacity:1; background:radial-gradient(ellipse at top left, rgba(var(--card-rgb,37,99,235),0.05),transparent 70%); }
         .dev-card .card-icon { width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:1rem; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1); border:1px solid rgba(0,0,0,0.05); }
@@ -151,7 +152,7 @@
         .dev-card:hover .tech-tag { border-color:rgba(var(--card-rgb,37,99,235),0.4); background:rgba(var(--card-rgb,37,99,235),0.1); color:rgb(var(--card-rgb,37,99,235)); }
 
         /* ══════════════════════════════════════════
-           MARKETING SECTION CARDS (Light Theme) - Resized to fit better
+           MARKETING SECTION CARDS 
         ══════════════════════════════════════════ */
         .mkt-card { position:relative; background:rgba(255,255,255,0.9); border:1px solid rgba(0,0,0,0.05); border-radius:24px; padding:1.5rem; transition:all 0.5s cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
         .mkt-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--mkt-color,#3b82f6),transparent); transform:scaleX(0); transform-origin:left; transition:transform 0.5s ease; border-radius:0 0 24px 24px; }
@@ -161,63 +162,34 @@
         .mkt-card:hover .mkt-metric { border-color:rgba(var(--mkt-rgb,37,99,235),0.3); background:rgba(var(--mkt-rgb,37,99,235),0.05); }
 
         /* ══════════════════════════════════════════
-           SECTION TAB SWITCHER (Light Theme)
+           SECTION TAB SWITCHER
         ══════════════════════════════════════════ */
         .tab-pill { padding:10px 28px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(0,0,0,0.08); background:rgba(0,0,0,0.03); color:#64748b; cursor:pointer; transition:all 0.35s ease; }
         .tab-pill.active { background:#2563eb; color:white; border-color:#2563eb; box-shadow:0 0 25px rgba(37,99,235,0.3); }
         .tab-pill:hover:not(.active) { border-color:rgba(0,0,0,0.2); color:#0f172a; background:rgba(0,0,0,0.06); }
 
-        /* ══════════════════════════════════════════
-           NAVBAR ACTIVE LINK
-        ══════════════════════════════════════════ */
         .nav-link.active-nav { color:#3b82f6; }
-
-        /* ══════════════════════════════════════════
-           ANIMATED NUMBER TICKER
-        ══════════════════════════════════════════ */
         .ticker-wrap { overflow:hidden; display:inline-block; }
-
-        /* ══════════════════════════════════════════
-           HERO BADGE PULSE RING
-        ══════════════════════════════════════════ */
         .pulse-ring { animation:pring 2s ease-out infinite; }
         @keyframes pring { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(2.2);opacity:0} }
 
-        /* ══════════════════════════════════════════
-           SERVICE CARD SHINE (Light Theme)
-        ══════════════════════════════════════════ */
         .shine-card { position:relative; overflow:hidden; }
         .shine-card::after { content:''; position:absolute; top:-50%; left:-75%; width:50%; height:200%; background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent); transform:skewX(-20deg); transition:left 0.7s ease; }
         .shine-card:hover::after { left:150%; }
 
-        /* ══════════════════════════════════════════
-           ANIMATED BACKGROUND MESH (Light Theme)
-        ══════════════════════════════════════════ */
         .mesh-bg { background: radial-gradient(ellipse 80% 80% at 20% 20%, rgba(37,99,235,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,0.06) 0%, transparent 60%); }
-
-        /* ══════════════════════════════════════════
-           NEW SECTION GLOW DIVIDERS
-        ══════════════════════════════════════════ */
         .section-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(37,99,235,0.2),rgba(139,92,246,0.2),transparent); margin:0; }
-
-        /* ══════════════════════════════════════════
-           STATS COUNTER ANIMATION
-        ══════════════════════════════════════════ */
         .stat-glow { text-shadow: 0 0 30px rgba(59,130,246,0.2); }
 
         /* ══════════════════════════════════════════
-           GLOBAL MAP MARKER STYLES (Professional Look)
+           GLOBAL MAP MARKER STYLES
         ══════════════════════════════════════════ */
         .map-marker { position: absolute; transform: translate(-50%, -50%); z-index: 10; }
         .map-marker .dot { width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; position: relative; cursor: pointer; transition: transform 0.3s, background 0.3s; box-shadow: 0 0 0 4px rgba(59,130,246,0.2); }
         .map-marker .dot::before { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(59,130,246,0.4); animation: pring 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-        .map-marker:hover .dot { transform: scale(1.4); background: #2563eb; }
         .map-marker.hq .dot { background: #10b981; box-shadow: 0 0 0 4px rgba(16,185,129,0.2); }
         .map-marker.hq .dot::before { border-color: rgba(16,185,129,0.4); }
-
-        .map-tooltip { position: absolute; bottom: 150%; left: 50%; transform: translateX(-50%) scale(0.9); opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: #0f172a; border-radius: 12px; padding: 12px 16px; width: max-content; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 50; }
-        .map-marker:hover .map-tooltip { opacity: 1; transform: translateX(-50%) scale(1); pointer-events: auto; }
-        .map-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: #0f172a transparent transparent transparent; }
+        /* Removed .map-tooltip class logic as we now use permanent visual labels */
     </style>
 </head>
 <body class="relative bg-slate-50">
@@ -275,15 +247,12 @@
              HERO SECTION
         ════════════════════════════════════ -->
         <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden hero-grid-bg">
-            <!-- Particle Canvas -->
             <canvas id="hero-canvas"></canvas>
 
-            <!-- Glow Blobs -->
             <div class="absolute top-1/4 -left-20 w-[700px] h-[700px] bg-blue-400/20 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
             <div class="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-purple-400/20 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" style="animation-delay:-2s"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-400/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-            <!-- Floating Ambient Badges -->
             <div class="hidden lg:block absolute top-32 right-16 floating-badge z-10">
                 <div class="glass-card-no-hover px-4 py-3 rounded-2xl flex items-center gap-3 text-xs font-bold">
                     <div class="w-8 h-8 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-sm"><i class="fa-solid fa-check"></i></div>
@@ -304,7 +273,6 @@
             </div>
 
             <div class="max-w-6xl mx-auto text-center relative z-10 mt-10">
-                <!-- Badge -->
                 <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-sm backdrop-blur-md reveal-element delay-100">
                     <div class="flex -space-x-2 mr-2">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Client 1" class="w-6 h-6 rounded-full border border-white shadow-sm" loading="lazy" decoding="async">
@@ -318,13 +286,11 @@
                     Trusted by ambitious growing startups
                 </div>
 
-                <!-- Main Heading -->
                 <h1 class="text-5xl md:text-[6.5rem] font-black leading-[0.95] tracking-tighter mb-6 font-syne reveal-element delay-200 text-slate-900">
                     We Build <span class="gradient-text">Growth</span><br/>
                     <span class="text-slate-400">Not Just Platforms.</span>
                 </h1>
 
-                <!-- Typewriter Subtitle -->
                 <div class="max-w-3xl mx-auto flex items-center justify-center flex-col text-slate-600 text-lg md:text-2xl font-medium mb-5 px-4 reveal-element delay-250 h-[140px] md:h-[84px] text-center">
                     <p class="leading-relaxed">
                         From custom <span id="typewriter-word" class="text-slate-900 font-black">Websites</span><span class="typewriter-cursor"></span> to AI systems — we engineer everything your brand needs to dominate.
@@ -332,7 +298,6 @@
                 </div>
                 <p class="max-w-2xl mx-auto text-slate-500 text-base mb-14 leading-relaxed px-4 reveal-element delay-300">Transparent process meets modern engineering. Scalable Software, fast Web solutions, and clean execution.</p>
 
-                <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6 px-4 md:px-0 reveal-element delay-400">
                     <div class="relative w-full sm:w-auto">
                         <a href="#pricing" class="block w-full sm:w-auto px-12 py-5 bg-blue-600 rounded-2xl font-black text-lg btn-premium text-white touch-manipulation nav-link">
@@ -345,7 +310,6 @@
                     </a>
                 </div>
 
-                <!-- Trust Badges -->
                 <div class="mt-16 text-slate-600 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-[10px] font-black uppercase tracking-widest px-4 reveal-element delay-500">
                     <span><i class="fa-solid fa-lock text-green-500 mr-1"></i> Secure Delivery</span><span class="hidden md:inline text-slate-300">•</span>
                     <span><i class="fa-solid fa-shield-halved text-blue-500 mr-1"></i> Agile Operations</span><span class="hidden md:inline text-slate-300">•</span>
@@ -374,7 +338,6 @@
         <div class="section-divider"></div>
         <section id="development" class="py-32 px-6 mesh-bg reveal-element">
             <div class="max-w-7xl mx-auto">
-                <!-- Section Header -->
                 <div class="text-center mb-20 reveal-element">
                     <span class="inline-flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">
                         <i class="fa-solid fa-code"></i> What We Build
@@ -385,10 +348,8 @@
                     <p class="text-slate-600 mt-5 max-w-2xl mx-auto text-base leading-relaxed">From pixel-perfect websites to enterprise-grade software — we engineer everything that powers your digital presence.</p>
                 </div>
 
-                <!-- Dev Cards Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="dev-grid"></div>
 
-                <!-- Bottom CTA -->
                 <div class="mt-14 text-center reveal-element">
                     <a href="#inquiry" class="inline-flex items-center gap-3 px-10 py-4 bg-white border border-slate-200 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-900 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 shadow-sm nav-link">
                         Discuss Your Project <i class="fa-solid fa-arrow-right"></i>
@@ -403,7 +364,6 @@
         ════════════════════════════════════ -->
         <section id="digital-marketing" class="py-32 px-6 bg-slate-100 reveal-element">
             <div class="max-w-7xl mx-auto">
-                <!-- Section Header -->
                 <div class="text-center mb-20 reveal-element">
                     <span class="inline-flex items-center gap-2 text-purple-600 font-black text-xs uppercase tracking-[0.4em] mb-4">
                         <i class="fa-solid fa-chart-line"></i> How We Grow You
@@ -414,13 +374,9 @@
                     <p class="text-slate-600 mt-5 max-w-2xl mx-auto text-base leading-relaxed">Data-driven campaigns, precision targeting, and growth strategies that deliver measurable ROI for your brand.</p>
                 </div>
 
-                <!-- Platform Tab Switcher -->
                 <div class="flex flex-wrap justify-center gap-3 mb-14 reveal-element" id="mkt-tabs"></div>
-
-                <!-- Marketing Cards Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="mkt-grid"></div>
 
-                <!-- Bottom Stats Strip -->
                 <div class="mt-16 bg-white shadow-sm border border-slate-200 rounded-[28px] p-8 md:p-10 reveal-element">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                         <div>
@@ -442,7 +398,6 @@
                     </div>
                 </div>
 
-                <!-- CTA -->
                 <div class="mt-10 text-center reveal-element">
                     <a href="#inquiry" class="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl font-black text-sm uppercase tracking-widest text-white btn-premium nav-link">
                         Start Growing Now <i class="fa-solid fa-rocket"></i>
@@ -466,7 +421,7 @@
 
         <!-- ════════════════════════════════════
              RECENT WORKS PORTFOLIO (Trust Section)
-             Enhanced with Highly Visible Political Labeled Map
+             UPDATED MAP LABELS & CLIENT/COUNTRY VIEWS
         ════════════════════════════════════ -->
         <section id="recent-works" class="py-24 md:py-32 px-6 bg-white reveal-element border-y border-slate-200">
             <div class="max-w-7xl mx-auto">
@@ -479,15 +434,12 @@
                     <a href="#inquiry" class="px-8 py-4 glass-card rounded-full font-black text-xs uppercase tracking-widest text-slate-900 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 w-full sm:w-auto text-center nav-link">Start Your Project</a>
                 </div>
 
-                <!-- GLOBAL WORLD MAP SECTION (HIGHER VISIBILITY & PERMANENT LABELS) -->
+                <!-- GLOBAL WORLD MAP SECTION -->
                 <div id="global-map-wrapper" class="relative w-full max-w-5xl mx-auto mb-20 md:mb-28 reveal-element bg-slate-50 rounded-[28px] overflow-hidden p-4 border border-slate-200 shadow-sm">
-                    <!-- Standard high-quality visible world outline map directly colored for clarity -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="w-full h-auto opacity-70 grayscale contrast-125 brightness-105" alt="Global Reach Map">
-                    <!-- Markers and labels dynamically injected -->
                     <div id="map-markers-container" class="absolute inset-0"></div>
                 </div>
                 
-                <!-- Cases Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cases-grid"></div>
 
             </div>
@@ -501,7 +453,6 @@
                     <h2 class="text-4xl md:text-6xl font-black font-syne text-slate-900">Pricing <span class="text-blue-600">Models</span></h2>
                     <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-base">Transparent and affordable pricing designed specifically for growing businesses and modern startups.</p>
                 </div>
-                <!-- Resized pricing grid layout -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative" id="pricing-grid"></div>
                 <div class="mt-12 text-center text-slate-500 flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold uppercase tracking-widest px-4 reveal-element">
                     <span><i class="fa-solid fa-shield-halved text-blue-500"></i> 100% Secure Processing</span><span class="hidden md:inline">•</span>
@@ -699,7 +650,7 @@
         </button>
     </div>
 
-    <!-- BUY PACKAGE MODAL (INLINE FORM ON THE SAME PAGE) -->
+    <!-- BUY PACKAGE MODAL -->
     <div id="buy-modal" class="hidden-el fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[11000] flex items-center justify-center p-4 transition-all duration-300">
         <div class="bg-white max-w-lg w-full p-6 md:p-8 rounded-[24px] border border-blue-500/20 relative transform transition-all duration-300 scale-95 shadow-2xl" id="buy-modal-content">
             <button onclick="window.closeBuyModal()" type="button" class="absolute top-5 right-5 text-xl text-slate-400 hover:text-slate-900 transition cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
@@ -826,36 +777,43 @@
     document.addEventListener("DOMContentLoaded", () => {
 
         // ══════════════════════════════
-        //  GLOBAL MAP DATA (PROFESSIONAL PRESENTATION)
+        //  GLOBAL MAP DATA (UPDATED FOR HIGH VISIBILITY AND NO OVERLAPS)
         // ══════════════════════════════
         const MAP_LOCATIONS = [
-            { title: "CodeBypass SaaS Portal", badgeText: "Paris: CodeBypass", client: "Jean-Luc", loc: "Paris, France", top: "25%", left: "48%" },
-            { title: "Premium Casino Platform", badgeText: "Vegas: Casino Dev", client: "Michael Rossi", loc: "Las Vegas, USA", top: "35%", left: "18%" },
-            { title: "Business & B2B Setup", badgeText: "Berlin: B2B Net", client: "Hans Mueller", loc: "Berlin, Germany", top: "23%", left: "50%" },
-            { title: "Procedural 3D Engine", badgeText: "London: 3D Flight", client: "Arthur Pendragon", loc: "London, UK", top: "23.5%", left: "47.5%" },
-            { title: "Google/Meta Ads", badgeText: "Rome: PPC Campaign", client: "Marco Bianchi", loc: "Rome, Italy", top: "27%", left: "50.5%" },
-            { title: "Organic SEO", badgeText: "Madrid: SEO Optimization", client: "Sofia Garcia", loc: "Madrid, Spain", top: "28%", left: "46.5%" },
-            { title: "Email Automations", badgeText: "Amsterdam: Email flows", client: "Lars van der Berg", loc: "Amsterdam, Netherlands", top: "23.5%", left: "48.5%" },
-            { title: "webhurt Engineering HQ", badgeText: "Noida: webhurt HQ", client: "Core Base", loc: "Noida, India", top: "42%", left: "70%", isHQ: true }
+            { title: "CodeBypass SaaS Portal", country: "FRANCE", client: "Jean-Luc", loc: "Paris, France", top: "27%", left: "47%", align: "left" },
+            { title: "Business & B2B Setup", country: "GERMANY", client: "Hans Mueller", loc: "Berlin, Germany", top: "20%", left: "51%", align: "top" },
+            { title: "Procedural 3D Engine", country: "UNITED KINGDOM", client: "Arthur Pendragon", loc: "London, UK", top: "22%", left: "44%", align: "left" },
+            { title: "Organic SEO", country: "SPAIN", client: "Sofia Garcia", loc: "Madrid, Spain", top: "32%", left: "45%", align: "bottom" },
+            { title: "PPC Campaign", country: "ITALY", client: "Marco Bianchi", loc: "Rome, Italy", top: "30%", left: "52%", align: "right" },
+            { title: "Email Automations", country: "NETHERLANDS", client: "Lars van der Berg", loc: "Amsterdam, Netherlands", top: "24%", left: "49%", align: "right" },
+            { title: "webhurt HQ", country: "INDIA", client: "Core Base", loc: "Noida, India", top: "42%", left: "70%", align: "bottom", isHQ: true }
         ];
 
-        // ── RENDER GLOBAL MAP MARKERS
+        // ── RENDER GLOBAL MAP MARKERS (UPDATED TO BE PERMANENT & CLEAR)
         const mapContainer = document.getElementById('map-markers-container');
         if(mapContainer) {
-            mapContainer.innerHTML = MAP_LOCATIONS.map(m => `
+            mapContainer.innerHTML = MAP_LOCATIONS.map(m => {
+                let alignClass = "";
+                // Logic to position labels safely so they don't overlap
+                if (m.align === 'left') alignClass = "right-full top-1/2 -translate-y-1/2 mr-2 md:mr-3";
+                if (m.align === 'right') alignClass = "left-full top-1/2 -translate-y-1/2 ml-2 md:ml-3";
+                if (m.align === 'top') alignClass = "bottom-full left-1/2 -translate-x-1/2 mb-2 md:mb-3";
+                if (m.align === 'bottom') alignClass = "top-full left-1/2 -translate-x-1/2 mt-2 md:mt-3";
+
+                return `
                 <div class="map-marker ${m.isHQ ? 'hq' : ''}" style="top: ${m.top}; left: ${m.left};">
                     <div class="dot"></div>
-                    <div class="absolute left-4 top-1/2 -translate-y-1/2 bg-slate-900 text-white border border-slate-700/50 px-2 py-1 rounded-lg text-[8px] md:text-[10px] font-black shadow-lg whitespace-nowrap z-30 flex items-center gap-1.5 hover:scale-105 transition-all">
-                        <span class="w-1.5 h-1.5 rounded-full ${m.isHQ ? 'bg-green-400' : 'bg-blue-400'} inline-block animate-pulse"></span>
-                        ${m.badgeText}
-                    </div>
-                    <div class="map-tooltip">
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1"><i class="fa-solid fa-location-dot mr-1"></i> ${m.loc}</p>
-                        <p class="text-sm font-black font-syne text-white whitespace-nowrap mb-0.5">${m.title}</p>
-                        <p class="text-[10px] font-bold text-blue-400">Client: ${m.client}</p>
+                    <div class="absolute ${alignClass} bg-white/95 backdrop-blur-md border border-slate-200 text-slate-900 px-3 py-2 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] whitespace-nowrap z-30 flex flex-col gap-0.5 hover:z-50 transition-all cursor-default">
+                        <div class="flex items-center gap-1.5 border-b border-slate-100 pb-1 mb-1">
+                            <span class="w-2 h-2 rounded-full ${m.isHQ ? 'bg-green-500' : 'bg-blue-500'} inline-block animate-pulse"></span>
+                            <span class="text-blue-600 font-black text-[9px] md:text-[10px] tracking-widest uppercase">${m.country}</span>
+                        </div>
+                        <span class="text-slate-800 text-[10px] md:text-[11px] font-bold"><i class="fa-solid fa-user text-slate-400 mr-1"></i> ${m.client}</span>
+                        <span class="text-slate-500 text-[8px] md:text-[9px] uppercase font-black tracking-wider"><i class="fa-solid fa-briefcase text-slate-400 mr-1"></i> ${m.title}</span>
                     </div>
                 </div>
-            `).join('');
+            `;
+            }).join('');
         }
 
         // ══════════════════════════════
@@ -886,7 +844,7 @@
             { title: "Social Media Mgmt", icon: "fa-solid fa-share-nodes", desc: "Full-service social presence management across all platforms with consistent brand voice.", metrics:[{ label: "Followers", val: "10K+" }, { label: "Eng Rate", val: "15%" }], color: "#06b6d4", rgb: "6,182,212", tags:["Posting", "Strategy", "Analytics"] }
         ];
 
-        // ── RECENT WORKS / PORTFOLIO (UPDATED GAME SECTION & NEW CASINO)
+        // ── RECENT WORKS / PORTFOLIO (UPDATED CASINO REMOVED)
         const CASE_STUDIES_DATA =[
             { 
                 title: "CodeBypass SaaS Portal", 
@@ -896,15 +854,6 @@
                 tag: "Web App Dev", 
                 link: "https://codebypass.com", 
                 linkText: "View CodeBypass" 
-            },
-            {
-                title: "Premium Casino Platform",
-                result: "High-Volume Transactions",
-                desc: "Engineered a highly secure, real-time interactive casino platform featuring live lobbies, seamless payment gateways, and encrypted user data.",
-                img: "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=800&q=80",
-                tag: "Web App Dev",
-                link: "#inquiry",
-                linkText: "View Platform"
             },
             { 
                 title: "Business & B2B Setup", 
@@ -953,7 +902,7 @@
             }
         ];
 
-        // ── TESTIMONIALS (ADDED REAL INDIAN & EUROPEAN CLIENT PORTRAITS)
+        // ── TESTIMONIALS 
         const TESTIMONIALS_DATA =[
             { name: "Rahul Deshmukh", role: "CTO, FinTech India", text: "webhurt didn't just build our site; they built our entire revenue engine. Their technical expertise helped us scale flawlessly across India.", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80" },
             { name: "Priya Sharma", role: "Founder, StyleAura", text: "Our e-commerce store's loading speed and sales doubled after webhurt's intervention. Truly a premium agency.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" },
@@ -1035,9 +984,9 @@
                         ${s.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
                     </div>
                 </div>
-                <div class="space-y-2 mt-auto">
-                    <button type="button" onclick="window.openBuyModal(\`${s.title}\`)" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition duration-300 shadow-md cursor-pointer">Buy Now</button>
-                    <a href="#inquiry" class="flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest nav-link py-1" style="color:${s.color}">
+                <div class="space-y-2 mt-auto relative z-20">
+                    <button type="button" onclick="window.openBuyModal('${s.title}')" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition duration-300 shadow-md cursor-pointer pointer-events-auto">Buy Now</button>
+                    <a href="#inquiry" class="flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest nav-link py-1 pointer-events-auto" style="color:${s.color}">
                         Get Quote <i class="fa-solid fa-arrow-right text-[8px]"></i>
                     </a>
                 </div>
@@ -1084,7 +1033,7 @@
                         </div>
                     </div>
                     <div class="space-y-2 mt-auto">
-                        <button type="button" onclick="window.openBuyModal(\`${s.title}\`)" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition duration-300 shadow-md cursor-pointer">Buy Now</button>
+                        <button type="button" onclick="window.openBuyModal('${s.title}')" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition duration-300 shadow-md cursor-pointer">Buy Now</button>
                         <a href="#inquiry" class="flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest nav-link py-1" style="color:${s.color}">
                             Start Campaign <i class="fa-solid fa-arrow-right text-[8px]"></i>
                         </a>
@@ -1161,7 +1110,7 @@
         `).join('');
 
         // ══════════════════════════════
-        //  RENDER: TEAM - Resized
+        //  RENDER: TEAM
         // ══════════════════════════════
         document.getElementById('team-grid').innerHTML = TEAM_DATA.map((t) => `
             <div class="bg-slate-50 border border-slate-200 shadow-sm rounded-[24px] overflow-hidden group flex flex-col reveal-element">
@@ -1201,7 +1150,7 @@
             extended.map(b => `<div class="text-xl font-bold font-syne text-slate-400 hover:text-blue-600 transition whitespace-nowrap">${b}</div>`).join('') + `</div>`;
 
         // ══════════════════════════════
-        //  RENDER: PRICING - Resized
+        //  RENDER: PRICING
         // ══════════════════════════════
         document.getElementById('pricing-grid').innerHTML = PRICING_PLANS.map((p) => `
             <div class="bg-white border border-slate-200 shadow-sm p-6 md:p-8 rounded-[24px] relative flex flex-col ${p.popular ? 'border-blue-500 shadow-[0_0_40px_rgba(37,99,235,0.15)] md:-translate-y-4 scale-[1.02]' : ''} reveal-element">
@@ -1222,7 +1171,7 @@
                 </div>
                 ${p.popular ? '<div class="text-center mb-3 text-[9px] text-red-500 font-black uppercase tracking-widest animate-pulse"><i class="fa-solid fa-hourglass-half mr-1"></i> Limited Slots</div>' : ''}
                 <div class="space-y-2 mt-auto">
-                    <button type="button" onclick="window.openBuyModal(\`${p.name}\`)" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition shadow-sm cursor-pointer">Buy Now</button>
+                    <button type="button" onclick="window.openBuyModal('${p.name}')" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-black uppercase tracking-wider py-2.5 rounded-xl transition shadow-sm cursor-pointer">Buy Now</button>
                     <a href="#inquiry" class="block w-full py-2.5 rounded-xl text-center text-slate-900 hover:bg-slate-50 text-[11px] font-black uppercase tracking-widest border border-slate-200">Choose Model</a>
                 </div>
             </div>
@@ -1260,7 +1209,7 @@
         });
 
         // ══════════════════════════════
-        //  HERO PARTICLE CANVAS (Optimized to pause when not visible)
+        //  HERO PARTICLE CANVAS
         // ══════════════════════════════
         const canvas = document.getElementById('hero-canvas');
         const ctx = canvas.getContext('2d');
@@ -1318,7 +1267,6 @@
             }
         }
 
-        // Added Performance Fix: Pause animation when hero is off-screen
         let isHeroCanvasVisible = true;
         const heroObserver = new IntersectionObserver(entries => { isHeroCanvasVisible = entries[0].isIntersecting; });
         heroObserver.observe(document.getElementById('home'));
@@ -1350,23 +1298,20 @@
         setTimeout(typeLoop, 1200);
 
         // ══════════════════════════════
-        //  WINDOW SCROLL EFFECTS (Throttled for Performance)
+        //  WINDOW SCROLL EFFECTS 
         // ══════════════════════════════
         let isScrolling = false;
         window.addEventListener('scroll', () => {
             if (!isScrolling) {
                 window.requestAnimationFrame(() => {
-                    // Navbar scroll effect
                     const nav = document.getElementById('navbar');
                     if (window.scrollY > 50) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
                     else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
 
-                    // Sticky bar
                     const sbar = document.getElementById('sticky-bar');
                     if (window.scrollY > 800) { sbar.classList.remove('hidden-el', 'translate-y-[100%]'); sbar.classList.add('visible-el', 'translate-y-0'); }
                     else { sbar.classList.add('hidden-el', 'translate-y-[100%]'); sbar.classList.remove('visible-el', 'translate-y-0'); }
 
-                    // Active nav highlight
                     const sections =['home', 'development', 'digital-marketing', 'process', 'recent-works', 'pricing'];
                     sections.forEach(id => {
                         const sec = document.getElementById(id);
@@ -1504,21 +1449,7 @@
         swViews();
 
         // ══════════════════════════════
-        //  MAGNETIC EFFECT
-        // ══════════════════════════════
-        document.querySelectorAll('.js-magnetic').forEach(b => {
-            const mc = b.querySelector('.magnetic-child');
-            if (!mc) return;
-            b.addEventListener('mousemove', (e) => {
-                const box = b.getBoundingClientRect();
-                const mX = e.clientX - (box.left + box.width / 2), mY = e.clientY - (box.top + box.height / 2);
-                mc.style.transform = `translate(${mX * 0.3}px, ${mY * 0.3}px) scale(1.1)`;
-            });
-            b.addEventListener('mouseleave', () => { mc.style.transform = `translate(0,0) scale(1)`; });
-        });
-
-        // ══════════════════════════════
-        //  BUY NOW INTERACTIVE POPUP SETUP (ROBUST FIX)
+        //  BUY NOW INTERACTIVE POPUP SETUP 
         // ══════════════════════════════
         window.openBuyModal = (packageName) => {
             document.getElementById('modal-package-name').innerText = packageName;
@@ -1542,7 +1473,7 @@
             }, 250);
         };
 
-        // Form Submission with secure EncodeURI for proper WhatsApp routing
+        // Form Submission
         document.getElementById('buy-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const pack = document.getElementById('modal-package-hidden').value;
