@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -44,6 +42,11 @@
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <!-- PERF PATCH: extra early connections (additive) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://upload.wikimedia.org">
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     
@@ -53,7 +56,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+    <!-- PERF PATCH: confetti was "defer" which made DOMContentLoaded (and ALL section rendering) wait for it. Now async + safe fallback. -->
+    <script>window.confetti = window.confetti || function () {};</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" async></script>
     <script>
         tailwind.config = {
             theme: {
@@ -190,6 +195,14 @@
         .map-marker.hq .dot { background: #10b981; box-shadow: 0 0 0 4px rgba(16,185,129,0.2); }
         .map-marker.hq .dot::before { border-color: rgba(16,185,129,0.4); }
         /* Removed .map-tooltip class logic as we now use permanent visual labels */
+
+        /* ══════════════════════════════════════════
+           PERFORMANCE PATCH (additive, no visual change)
+        ══════════════════════════════════════════ */
+        /* will-change on dozens of reveal elements kept them all as GPU layers at once -> heavy scroll. Browser promotes automatically during the transition. */
+        .reveal-element { will-change: auto; }
+        /* these bars are 95% opaque white, so a huge blur radius is invisible but expensive on every scroll frame */
+        #sticky-bar, #mobile-menu { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
     </style>
 </head>
 <body class="relative bg-slate-50">
@@ -436,7 +449,7 @@
 
                 <!-- GLOBAL WORLD MAP SECTION -->
                 <div id="global-map-wrapper" class="relative w-full max-w-5xl mx-auto mb-20 md:mb-28 reveal-element bg-slate-50 rounded-[28px] overflow-hidden p-4 border border-slate-200 shadow-sm">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="w-full h-auto opacity-70 grayscale contrast-125 brightness-105" alt="Global Reach Map">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" loading="lazy" decoding="async" class="w-full h-auto opacity-70 grayscale contrast-125 brightness-105" alt="Global Reach Map">
                     <div id="map-markers-container" class="absolute inset-0"></div>
                 </div>
                 
@@ -903,20 +916,24 @@
         ];
 
         // ── TESTIMONIALS 
+        // cl1-cl3 = Indian clients, cla / cla2 = American clients (local images, no external loading).
+        // Elena & David have no photo yet: img is empty, so a clean initials avatar is shown automatically.
+        // To add their photos later, just write e.g. img: "cl4.jpg" / img: "cla3.jpg".
         const TESTIMONIALS_DATA =[
-            { name: "Rahul Deshmukh", role: "CTO, FinTech India", text: "webhurt didn't just build our site; they built our entire revenue engine. Their technical expertise helped us scale flawlessly across India.", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "Priya Sharma", role: "Founder, StyleAura", text: "Our e-commerce store's loading speed and sales doubled after webhurt's intervention. Truly a premium agency.", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "Ankit Verma", role: "Director, GrowSmart", text: "The Meta Ad campaigns they ran for us achieved a 4x ROAS in the first month. Highly recommend their marketing squad.", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "Sarah Jenkins", role: "CEO, Luxora", text: "webhurt didn't just build our site; they built our entire revenue engine. Our ROAS jumped notably.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "Marcus Thorne", role: "Founder, Thorne AI", text: "Engineering quality unmatched. Automated 80% operations, saving us heavily in monthly overheads.", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "Elena Rodriguez", role: "Director, Zenith", text: "Data-driven logic is game-changing. High quality lead acquisition plummeted costs dynamically.", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" },
-            { name: "David Chen", role: "Elevate Media", text: "Traffic conversions sky-rocketed following core SEO bounds webhurt optimized for us.", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&h=150&q=80" }
+            { name: "Rahul Deshmukh", role: "Co-Founder & CTO, FinTech India", text: "webhurt didn't just build our site; they built our entire revenue engine. Their technical expertise helped us scale flawlessly across India.", img: "cl1.jpg" },
+            { name: "Priya Sharma", role: "Founder & Creative Head, StyleAura", text: "Our e-commerce store's loading speed and sales doubled after webhurt's intervention. Truly a premium agency.", img: "cl2.jpg" },
+            { name: "Ankit Verma", role: "Head of Growth, GrowSmart", text: "The Meta Ad campaigns they ran for us achieved a 4x ROAS in the first month. Highly recommend their marketing squad.", img: "cl3.jpg" },
+            { name: "Sarah Jenkins", role: "Founder & CEO, Luxora", text: "webhurt didn't just build our site; they built our entire revenue engine. Our ROAS jumped notably.", img: "cla.jpg" },
+            { name: "Marcus Thorne", role: "Founder & CEO, Thorne AI", text: "Engineering quality unmatched. Automated 80% operations, saving us heavily in monthly overheads.", img: "cla2.jpg" },
+            { name: "Elena Rodriguez", role: "Director of Marketing, Zenith", text: "Data-driven logic is game-changing. High quality lead acquisition plummeted costs dynamically.", img: "" },
+            { name: "David Chen", role: "Digital Marketing Manager, Elevate Media", text: "Traffic conversions sky-rocketed following core SEO bounds webhurt optimized for us.", img: "" }
         ];
 
         const TEAM_DATA =[
             { name: "Aayan Siddiqui", role: "Founder & CEO", img: "ceo.jpg", desc: "Visionary leader driving innovation and scaling webhurt to new heights." },
             { name: "Divyam Sharma", role: "Frontend Architect", img: "divyam.jpg", desc: "Crafting fast, modern UI with exceptional user experience." },
-            { name: "Charles Chand", role: "Backend Engineer", img: "chand.jpg", desc: "Building secure, scalable backend systems and robust APIs." },
+            // pos = image focus point (fixes face being cropped). Try "center 20%" / "center top" / "center 40%" to fine-tune.
+            { name: "Charles Chand", role: "Backend Engineer", img: "chand.jpg", pos: "center top", desc: "Building secure, scalable backend systems and robust APIs." },
             { name: "Naseem Mirza", role: "Tech Specialist", img: "naseem.jpg", desc: "Ensuring flawless setups, zero-bug ops, and fast delivery speeds." },
             { name: "Iqra Tyagi", role: "AdSense Expert", img: "marketing.jpg", desc: "Monetizing spaces correctly. Strategizing social presence seamlessly." }
         ];
@@ -1092,6 +1109,12 @@
         // ══════════════════════════════
         //  RENDER: TESTIMONIALS
         // ══════════════════════════════
+        // Initials avatar (inline SVG) - used when a client has no photo yet, or if a photo file fails to load.
+        const avatarFallback = (name) => {
+            const initials = name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+            const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><text x="50" y="50" dy=".35em" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">' + initials + '</text></svg>';
+            return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        };
         document.getElementById('testimonials-grid').innerHTML = TESTIMONIALS_DATA.map((t) => `
             <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] relative text-slate-900 reveal-element">
                 <i class="fa-solid fa-quote-right absolute top-8 right-8 text-3xl md:text-4xl text-blue-600/10"></i>
@@ -1100,7 +1123,7 @@
                 </div>
                 <p class="text-base md:text-lg mb-8 md:mb-10 leading-relaxed text-slate-700 font-medium">"${t.text}"</p>
                 <div class="flex items-center gap-4 md:gap-5 mt-auto">
-                    <img src="${t.img}" alt="${t.name}" loading="lazy" decoding="async" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
+                    <img src="${t.img || avatarFallback(t.name)}" alt="${t.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${avatarFallback(t.name)}'" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
                     <div>
                         <h4 class="font-black text-base md:text-lg font-syne">${t.name}</h4>
                         <p class="text-[9px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">${t.role}</p>
@@ -1115,7 +1138,7 @@
         document.getElementById('team-grid').innerHTML = TEAM_DATA.map((t) => `
             <div class="bg-slate-50 border border-slate-200 shadow-sm rounded-[24px] overflow-hidden group flex flex-col reveal-element">
                 <div class="h-48 md:h-56 overflow-hidden relative">
-                    <img src="${t.img}" alt="${t.name}" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" class="w-full h-full object-cover relative z-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                    <img src="${t.img}" alt="${t.name}" style="object-position:${t.pos || 'center'}" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'" class="w-full h-full object-cover relative z-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 opacity-90"></div>
                 </div>
                 <div class="p-4 md:p-6 text-center relative z-20 flex-grow flex flex-col items-center justify-center -mt-10 bg-white/95 backdrop-blur-xl mx-4 md:mx-6 rounded-xl border border-slate-200 mb-4 shadow-lg text-slate-900">
@@ -1300,33 +1323,50 @@
         // ══════════════════════════════
         //  WINDOW SCROLL EFFECTS 
         // ══════════════════════════════
+        // PERF: state is remembered so classes are only touched when something actually changes (not on every scroll frame).
         let isScrolling = false;
+        let _navOn = null, _sbarOn = null, _activeSec = null;
         window.addEventListener('scroll', () => {
             if (!isScrolling) {
                 window.requestAnimationFrame(() => {
                     const nav = document.getElementById('navbar');
-                    if (window.scrollY > 50) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
-                    else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+                    const _navNow = window.scrollY > 50;
+                    if (_navNow !== _navOn) {
+                        _navOn = _navNow;
+                        if (_navNow) nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+                        else nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'border-slate-200');
+                    }
 
                     const sbar = document.getElementById('sticky-bar');
-                    if (window.scrollY > 800) { sbar.classList.remove('hidden-el', 'translate-y-[100%]'); sbar.classList.add('visible-el', 'translate-y-0'); }
-                    else { sbar.classList.add('hidden-el', 'translate-y-[100%]'); sbar.classList.remove('visible-el', 'translate-y-0'); }
+                    const _sbarNow = window.scrollY > 800;
+                    if (_sbarNow !== _sbarOn) {
+                        _sbarOn = _sbarNow;
+                        if (_sbarNow) { sbar.classList.remove('hidden-el', 'translate-y-[100%]'); sbar.classList.add('visible-el', 'translate-y-0'); }
+                        else { sbar.classList.add('hidden-el', 'translate-y-[100%]'); sbar.classList.remove('visible-el', 'translate-y-0'); }
+                    }
 
                     const sections =['home', 'development', 'digital-marketing', 'process', 'recent-works', 'pricing'];
+                    let _activeNow = null;
                     sections.forEach(id => {
                         const sec = document.getElementById(id);
                         if (!sec) return;
                         const rect = sec.getBoundingClientRect();
-                        const links = document.querySelectorAll(`a[href="#${id}"]`);
-                        if (rect.top <= 120 && rect.bottom >= 120) links.forEach(l => l.classList.add('text-blue-600'));
-                        else links.forEach(l => l.classList.remove('text-blue-600'));
+                        if (rect.top <= 120 && rect.bottom >= 120) _activeNow = id;
                     });
+                    if (_activeNow !== _activeSec) {
+                        sections.forEach(id => {
+                            const links = document.querySelectorAll(`a[href="#${id}"]`);
+                            if (id === _activeNow) links.forEach(l => l.classList.add('text-blue-600'));
+                            else links.forEach(l => l.classList.remove('text-blue-600'));
+                        });
+                        _activeSec = _activeNow;
+                    }
                     
                     isScrolling = false;
                 });
                 isScrolling = true;
             }
-        });
+        }, { passive: true });
 
         // ══════════════════════════════
         //  LIVE TIMER + VISITOR COUNT
@@ -1492,6 +1532,23 @@
                 window.closeBuyModal();
             }, 1000);
         });
+
+        // ══════════════════════════════
+        //  PERFORMANCE PATCH (additive)
+        //  1) infinite animations (shimmer text, marquee, floating badges, pulses) pause when off-screen
+        //  2) fewer hero particles on phones/tablets
+        // ══════════════════════════════
+        (() => {
+            if ('IntersectionObserver' in window) {
+                const animObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        entry.target.style.animationPlayState = entry.isIntersecting ? '' : 'paused';
+                    });
+                }, { rootMargin: '100px 0px' });
+                document.querySelectorAll('.gradient-text, .marquee-content, .floating-badge, .animate-pulse-slow, .pulse-ring, .animate-pulse, .typewriter-cursor').forEach(node => animObserver.observe(node));
+            }
+            if (window.innerWidth < 768 && particles.length > 36) particles.length = 36;
+        })();
 
     });
     </script>
