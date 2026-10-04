@@ -923,7 +923,7 @@
             { name: "Rahul Deshmukh", role: "Co-Founder & CTO, FinTech India", text: "webhurt didn't just build our site; they built our entire revenue engine. Their technical expertise helped us scale flawlessly across India.", img: "cl1.jpg" },
             { name: "Priya Sharma", role: "Founder & Creative Head, StyleAura", text: "Our e-commerce store's loading speed and sales doubled after webhurt's intervention. Truly a premium agency.", img: "cl2.jpg" },
             { name: "Ankit Verma", role: "Head of Growth, GrowSmart", text: "The Meta Ad campaigns they ran for us achieved a 4x ROAS in the first month. Highly recommend their marketing squad.", img: "cl3.jpg" },
-            { name: "Sarah Jenkins", role: "Founder & CEO, Luxora", text: "webhurt didn't just build our site; they built our entire revenue engine. Our ROAS jumped notably.", img: "cla1.jpg" },
+            { name: "Sarah Jenkins", role: "Founder & CEO, Luxora", text: "webhurt didn't just build our site; they built our entire revenue engine. Our ROAS jumped notably.", img: "cla.jpg" },
             { name: "Marcus Thorne", role: "Founder & CEO, Thorne AI", text: "Engineering quality unmatched. Automated 80% operations, saving us heavily in monthly overheads.", img: "cla2.jpg" },
             { name: "Elena Rodriguez", role: "Director of Marketing, Zenith", text: "Data-driven logic is game-changing. High quality lead acquisition plummeted costs dynamically.", img: "" },
             { name: "David Chen", role: "Digital Marketing Manager, Elevate Media", text: "Traffic conversions sky-rocketed following core SEO bounds webhurt optimized for us.", img: "" }
@@ -1115,6 +1115,25 @@
             const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><text x="50" y="50" dy=".35em" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">' + initials + '</text></svg>';
             return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
         };
+        // Tries the exact file name first, then common alternatives (cla.jpg <-> cla1.jpg, .jpeg/.png/.webp, upper-case), then falls back to initials.
+        const imgCandidates = (src) => {
+            if (!src) return [];
+            const m = src.match(/^(.*?)(?:\.([A-Za-z0-9]+))?$/);
+            const base = m[1], ext = m[2] || 'jpg';
+            const bases = [base];
+            if (base === 'cla') bases.push('cla1');
+            if (base === 'cla1') bases.push('cla');
+            const exts = [ext, 'jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
+            const out = [];
+            bases.forEach(b => exts.forEach(e => { const f = b + '.' + e; if (!out.includes(f)) out.push(f); }));
+            return out;
+        };
+        window.avatarNext = (img) => {
+            const list = (img.dataset.alts || '').split('|').filter(Boolean);
+            const i = parseInt(img.dataset.i || '0', 10);
+            if (i < list.length) { img.dataset.i = i + 1; img.src = list[i]; }
+            else { img.onerror = null; img.src = img.dataset.fallback; }
+        };
         document.getElementById('testimonials-grid').innerHTML = TESTIMONIALS_DATA.map((t) => `
             <div class="bg-white border border-slate-200 shadow-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] relative text-slate-900 reveal-element">
                 <i class="fa-solid fa-quote-right absolute top-8 right-8 text-3xl md:text-4xl text-blue-600/10"></i>
@@ -1123,7 +1142,7 @@
                 </div>
                 <p class="text-base md:text-lg mb-8 md:mb-10 leading-relaxed text-slate-700 font-medium">"${t.text}"</p>
                 <div class="flex items-center gap-4 md:gap-5 mt-auto">
-                    <img src="${t.img || avatarFallback(t.name)}" alt="${t.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${avatarFallback(t.name)}'" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200">
+                    <img src="${imgCandidates(t.img)[0] || avatarFallback(t.name)}" data-alts="${imgCandidates(t.img).slice(1).join('|')}" data-i="0" data-fallback="${avatarFallback(t.name)}" alt="${t.name}" style="object-position:center 20%" loading="lazy" decoding="async" onerror="window.avatarNext(this)" class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-blue-200 flex-shrink-0">
                     <div>
                         <h4 class="font-black text-base md:text-lg font-syne">${t.name}</h4>
                         <p class="text-[9px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest mt-1">${t.role}</p>
